@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using DevAgeDrawing = DevAge.Drawing;
 namespace SourceGrid.Cells.Views
 {
     public class ComboBox : Cell
@@ -22,7 +22,7 @@ namespace SourceGrid.Cells.Views
         /// </summary>
         public ComboBox()
         {
-            ElementDropDown.AnchorArea = new DevAge.Drawing.AnchorArea(float.NaN, 0, 0, 0, false, false);
+            ElementDropDown.AnchorArea = new DevAgeDrawing.AnchorArea(float.NaN, 0, 0, 0, false, false);
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace SourceGrid.Cells.Views
         public ComboBox(ComboBox p_Source)
             : base(p_Source)
         {
-            ElementDropDown = (DevAge.Drawing.VisualElements.IDropDownButton)p_Source.ElementDropDown.Clone();
+            ElementDropDown = (DevAgeDrawing.VisualElements.IDropDownButton)p_Source.ElementDropDown.Clone();
         }
         #endregion
 
@@ -43,24 +43,24 @@ namespace SourceGrid.Cells.Views
             PrepareVisualElementDropDown(context);
         }
 
-        protected override IEnumerable<DevAge.Drawing.VisualElements.IVisualElement> GetElements()
+        protected override IEnumerable<DevAgeDrawing.VisualElements.IVisualElement> GetElements()
         {
             if (ElementDropDown != null)
                 yield return ElementDropDown;
 
-            foreach (DevAge.Drawing.VisualElements.IVisualElement v in GetBaseElements())
+            foreach (DevAgeDrawing.VisualElements.IVisualElement v in GetBaseElements())
                 yield return v;
         }
-        private IEnumerable<DevAge.Drawing.VisualElements.IVisualElement> GetBaseElements()
+        private IEnumerable<DevAgeDrawing.VisualElements.IVisualElement> GetBaseElements()
         {
             return base.GetElements();
         }
 
-        private DevAge.Drawing.VisualElements.IDropDownButton mElementDropDown = new DevAge.Drawing.VisualElements.DropDownButtonThemed();
+        private DevAgeDrawing.VisualElements.IDropDownButton mElementDropDown = new DevAgeDrawing.VisualElements.DropDownButtonThemed();
         /// <summary>
         /// Gets or sets the visual element used to draw the checkbox. Default is DevAge.Drawing.VisualElements.CheckBoxThemed.
         /// </summary>
-        public DevAge.Drawing.VisualElements.IDropDownButton ElementDropDown
+        public DevAgeDrawing.VisualElements.IDropDownButton ElementDropDown
         {
             get { return mElementDropDown; }
             set { mElementDropDown = value; }
@@ -71,11 +71,11 @@ namespace SourceGrid.Cells.Views
         {
             if (context.CellRange.Contains(context.Grid.MouseCellPosition))
             {
-                ElementDropDown.Style = DevAge.Drawing.ButtonStyle.Hot;
+                ElementDropDown.Style = DevAgeDrawing.ButtonStyle.Hot;
             }
             else
             {
-                ElementDropDown.Style = DevAge.Drawing.ButtonStyle.Normal;
+                ElementDropDown.Style = DevAgeDrawing.ButtonStyle.Normal;
             }
         }
 

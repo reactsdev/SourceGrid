@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Windows.Forms;
-
+using DevAgeForms = DevAge.Windows.Forms;
 namespace SourceGrid
 {
 	/// <summary>
@@ -296,7 +296,7 @@ namespace SourceGrid
 			}
 			catch(Exception err)
 			{
-				DevAge.Windows.Forms.ErrorDialog.Show(this,err, "Error");
+				DevAgeForms.ErrorDialog.Show(this,err, "Error");
 			}
 		}
 
@@ -328,7 +328,7 @@ namespace SourceGrid
 			}
 			catch(Exception err)
 			{
-				DevAge.Windows.Forms.ErrorDialog.Show(this,err, "Error");
+				DevAgeForms.ErrorDialog.Show(this,err, "Error");
 			}
 		}
 
@@ -340,7 +340,7 @@ namespace SourceGrid
 			}
 			catch(Exception err)
 			{
-				DevAge.Windows.Forms.ErrorDialog.Show(this,err, "Error");
+				DevAgeForms.ErrorDialog.Show(this,err, "Error");
 			}
 		}
 
@@ -365,7 +365,7 @@ namespace SourceGrid
 			}
 			catch(Exception err)
 			{
-				DevAge.Windows.Forms.ErrorDialog.Show(this,err, "Error");
+				DevAgeForms.ErrorDialog.Show(this,err, "Error");
 			}
 		}
 
@@ -391,7 +391,7 @@ namespace SourceGrid
 			}
 			catch(Exception err)
 			{
-				DevAge.Windows.Forms.ErrorDialog.Show(this,err, "Error");
+				DevAgeForms.ErrorDialog.Show(this,err, "Error");
 			}
 		}
 

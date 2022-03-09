@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 
 using System.Windows.Forms;
+using DevAgeForms = DevAge.Windows.Forms;
 
 
 namespace SourceGrid.Cells.Editors
@@ -31,7 +32,7 @@ namespace SourceGrid.Cells.Editors
 		/// <returns></returns>
 		protected override Control CreateControl()
 		{
-            DevAge.Windows.Forms.DevAgeTextBox editor = new DevAge.Windows.Forms.DevAgeTextBox();
+			DevAgeForms.DevAgeTextBox editor = new DevAgeForms.DevAgeTextBox();
 			editor.BorderStyle = BorderStyle.None;
 			editor.AutoSize = false;
 			editor.Validator = this;
@@ -41,11 +42,11 @@ namespace SourceGrid.Cells.Editors
 		/// <summary>
 		/// Gets the control used for editing the cell.
 		/// </summary>
-		public new DevAge.Windows.Forms.DevAgeTextBox Control
+		public new DevAgeForms.DevAgeTextBox Control
 		{
 			get
 			{
-                return (DevAge.Windows.Forms.DevAgeTextBox)base.Control;
+                return (DevAgeForms.DevAgeTextBox)base.Control;
 			}
 		}
 		#endregion

@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using DevAgeComponent = DevAge.ComponentModel;
 
 namespace SourceGrid.Cells.Editors
 {
@@ -7,7 +8,7 @@ namespace SourceGrid.Cells.Editors
 	/// Represents the base class of a DataModel. This DataModel support conversion but doesn't provide any user interface editor.
 	/// </summary>
     [System.ComponentModel.ToolboxItem(false)]
-    public class EditorBase : DevAge.ComponentModel.Validator.ValidatorTypeConverter
+    public class EditorBase : DevAgeComponent.Validator.ValidatorTypeConverter
 	{
 		#region Constructor
 		/// <summary>

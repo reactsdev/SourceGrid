@@ -2,6 +2,8 @@ using System;
 using System.Drawing;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using DevAgeDrawing = DevAge.Drawing;
+using DevAgeForms = DevAge.Windows.Forms;
 
 namespace SourceGrid.Cells.Views
 {
@@ -23,7 +25,7 @@ namespace SourceGrid.Cells.Views
 		/// </summary>
 		public Cell()
 		{
-            ElementsDrawMode = DevAge.Drawing.ElementsDrawMode.Align;
+            ElementsDrawMode = DevAgeDrawing.ElementsDrawMode.Align;
 		}
 
 		/// <summary>
@@ -32,8 +34,8 @@ namespace SourceGrid.Cells.Views
 		/// <param name="p_Source"></param>
 		public Cell(Cell p_Source):base(p_Source)
 		{
-            ElementImage = (DevAge.Drawing.VisualElements.IImage)p_Source.ElementImage.Clone();
-            ElementText = (DevAge.Drawing.VisualElements.IText)p_Source.ElementText.Clone();
+            ElementImage = (DevAgeDrawing.VisualElements.IImage)p_Source.ElementImage.Clone();
+            ElementText = (DevAgeDrawing.VisualElements.IText)p_Source.ElementText.Clone();
 		}
 		#endregion
 
@@ -50,7 +52,7 @@ namespace SourceGrid.Cells.Views
 
         #region Visual elements
 
-        protected override IEnumerable<DevAge.Drawing.VisualElements.IVisualElement> GetElements()
+        protected override IEnumerable<DevAgeDrawing.VisualElements.IVisualElement> GetElements()
         {
             if (ElementImage != null)
                 yield return ElementImage;
@@ -68,12 +70,12 @@ namespace SourceGrid.Cells.Views
             PrepareVisualElementImage(context);
         }
 
-        private DevAge.Drawing.VisualElements.IText mElementText = new DevAge.Drawing.VisualElements.TextGDI();
+        private DevAgeDrawing.VisualElements.IText mElementText = new DevAgeDrawing.VisualElements.TextGDI();
         /// <summary>
         /// Gets or sets the IText visual element used to draw the cell text.
         /// Default is DevAge.Drawing.VisualElements.TextGDI
         /// </summary>
-        public DevAge.Drawing.VisualElements.IText ElementText
+        public DevAgeDrawing.VisualElements.IText ElementText
         {
             get { return mElementText; }
             set { mElementText = value; }
@@ -85,9 +87,9 @@ namespace SourceGrid.Cells.Views
         /// </summary>
         protected virtual void PrepareVisualElementText(CellContext context)
         {
-            if (ElementText is DevAge.Drawing.VisualElements.TextRenderer)
+            if (ElementText is DevAgeDrawing.VisualElements.TextRenderer)
             {
-                DevAge.Drawing.VisualElements.TextRenderer elementText = (DevAge.Drawing.VisualElements.TextRenderer)ElementText;
+                DevAgeDrawing.VisualElements.TextRenderer elementText = (DevAgeDrawing.VisualElements.TextRenderer)ElementText;
 
                 elementText.TextFormatFlags = TextFormatFlags.Default | TextFormatFlags.NoPrefix;
                 if (WordWrap)
@@ -96,11 +98,11 @@ namespace SourceGrid.Cells.Views
                     elementText.TextFormatFlags |= TextFormatFlags.EndEllipsis;
                 else if (TrimmingMode == TrimmingMode.Word)
                     elementText.TextFormatFlags |= TextFormatFlags.WordEllipsis;
-                elementText.TextFormatFlags |= DevAge.Windows.Forms.Utilities.ContentAligmentToTextFormatFlags(TextAlignment);
+                elementText.TextFormatFlags |= DevAgeForms.Utilities.ContentAligmentToTextFormatFlags(TextAlignment);
             }
-            else if (ElementText is DevAge.Drawing.VisualElements.TextGDI)
+            else if (ElementText is DevAgeDrawing.VisualElements.TextGDI)
             {
-                DevAge.Drawing.VisualElements.TextGDI elementTextGDI = (DevAge.Drawing.VisualElements.TextGDI)ElementText;
+                DevAgeDrawing.VisualElements.TextGDI elementTextGDI = (DevAgeDrawing.VisualElements.TextGDI)ElementText;
 
                 if (WordWrap)
                     elementTextGDI.StringFormat.FormatFlags = (StringFormatFlags)0;
@@ -123,12 +125,12 @@ namespace SourceGrid.Cells.Views
             ElementText.Value = context.DisplayText;
         }
 
-        private DevAge.Drawing.VisualElements.IImage mElementImage = new DevAge.Drawing.VisualElements.Image();
+        private DevAgeDrawing.VisualElements.IImage mElementImage = new DevAgeDrawing.VisualElements.Image();
         /// <summary>
         /// Gets or sets the IImage visual element used to draw the cell image.
         /// Default is DevAge.Drawing.VisualElements.Image
         /// </summary>
-        public DevAge.Drawing.VisualElements.IImage ElementImage
+        public DevAgeDrawing.VisualElements.IImage ElementImage
         {
             get { return mElementImage; }
             set { mElementImage = value; }
@@ -140,7 +142,7 @@ namespace SourceGrid.Cells.Views
         /// </summary>
         protected virtual void PrepareVisualElementImage(CellContext context)
         {
-            ElementImage.AnchorArea = new DevAge.Drawing.AnchorArea(ImageAlignment, ImageStretch);
+            ElementImage.AnchorArea = new DevAgeDrawing.AnchorArea(ImageAlignment, ImageStretch);
 
             //Read the image
             System.Drawing.Image img = null;

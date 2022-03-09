@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
-
+using DevAgeComponent = DevAge.ComponentModel;
 using System.Windows.Forms;
 
 
@@ -21,7 +21,7 @@ namespace SourceGrid.Cells.Editors
 		/// <param name="p_Type">The type of this model</param>
 		public TextBoxCurrency(Type p_Type):base(p_Type)
 		{
-			TypeConverter = new DevAge.ComponentModel.Converter.CurrencyTypeConverter(p_Type);
+			TypeConverter = new DevAgeComponent.Converter.CurrencyTypeConverter(p_Type);
 		}
 		#endregion
 

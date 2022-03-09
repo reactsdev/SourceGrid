@@ -1,14 +1,13 @@
+using DevAge.Drawing;
 using System;
 using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace WindowsFormsSample
 {
-	/// <summary>
-	/// Summary description for frmSample14.
-	/// </summary>
+    /// <summary>
+    /// Summary description for frmSample14.
+    /// </summary>
     [Sample("SourceGrid - Basic concepts", 28, "Real Grid basic (custom header, alternate backcolor)")]
 	public class frmSample28 : System.Windows.Forms.Form
 	{
@@ -78,8 +77,8 @@ namespace WindowsFormsSample
 		{
 			base.OnLoad (e);
 
-			//Border
-			DevAge.Drawing.BorderLine border = new DevAge.Drawing.BorderLine(Color.DarkKhaki, 1);
+            //Border
+            BorderLine border = new DevAge.Drawing.BorderLine(Color.DarkKhaki, 1);
 			DevAge.Drawing.RectangleBorder cellBorder = new DevAge.Drawing.RectangleBorder(border, border);
 
 			//Views
@@ -103,7 +102,7 @@ namespace WindowsFormsSample
 
 
 			//Create the grid
-			grid1.BorderStyle = BorderStyle.FixedSingle;
+			grid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 
 			grid1.ColumnsCount = 3;
 			grid1.FixedRows = 1;

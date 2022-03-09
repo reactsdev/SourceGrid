@@ -1,6 +1,5 @@
 ﻿
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 using Microsoft.Isam.Esent.Collections.Generic;
@@ -8,7 +7,7 @@ using SourceGrid.PingGrid.Backend.Essent;
 
 namespace WindowsFormsSample.GridSamples.PingGrids
 {
-	[Sample("SourceGrid - PingGrid", 59, "PingGrid - Essent backend")]
+    [Sample("SourceGrid - PingGrid", 59, "PingGrid - Essent backend")]
 	public partial class frmSample59 : Form
 	{
 		string[] customerNames = {"FireBird", "MySQL", "PostGre", "DivanDB", "CouchDB"};

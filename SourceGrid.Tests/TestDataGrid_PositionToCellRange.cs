@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using NUnit.Framework;
+using DevAgeComponent = DevAge.ComponentModel;
 
 namespace SourceGrid.Tests
 {
@@ -22,7 +23,7 @@ namespace SourceGrid.Tests
 			DataGrid grid1 = new DataGrid();
 			List<int> list = new List<int>();
 			list.Add(1);
-			grid1.DataSource = new DevAge.ComponentModel.BoundList<int>(list);
+			grid1.DataSource = new DevAgeComponent.BoundList<int>(list);
 			grid1.DataSource.AllowNew  = false;
 			
 			// assert no rows are selected
@@ -47,7 +48,7 @@ namespace SourceGrid.Tests
 		{
 			DataGrid grid1 = new DataGrid();
 			List<int> list = new List<int>();
-			grid1.DataSource = new DevAge.ComponentModel.BoundList<int>(list);
+			grid1.DataSource = new DevAgeComponent.BoundList<int>(list);
 			Assert.AreEqual(Range.Empty, grid1.PositionToCellRange(new Position(5, 5)));
 		}
 	}

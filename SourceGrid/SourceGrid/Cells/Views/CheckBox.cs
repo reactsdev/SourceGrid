@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using DevAgeDrawing = DevAge.Drawing;
 
 namespace SourceGrid.Cells.Views
 {
@@ -25,8 +26,8 @@ namespace SourceGrid.Cells.Views
 		static CheckBox()
 		{
 			MiddleLeftAlign = new CheckBox();
-			MiddleLeftAlign.CheckBoxAlignment = DevAge.Drawing.ContentAlignment.MiddleLeft;
-			MiddleLeftAlign.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleLeft;
+			MiddleLeftAlign.CheckBoxAlignment = DevAgeDrawing.ContentAlignment.MiddleLeft;
+			MiddleLeftAlign.TextAlignment = DevAgeDrawing.ContentAlignment.MiddleLeft;
 		}
 
 		/// <summary>
@@ -43,15 +44,15 @@ namespace SourceGrid.Cells.Views
 		public CheckBox(CheckBox p_Source):base(p_Source)
 		{
 			m_CheckBoxAlignment = p_Source.m_CheckBoxAlignment;
-            ElementCheckBox = (DevAge.Drawing.VisualElements.ICheckBox)ElementCheckBox.Clone();
+            ElementCheckBox = (DevAgeDrawing.VisualElements.ICheckBox)ElementCheckBox.Clone();
 		}
 		#endregion
 
-		private DevAge.Drawing.ContentAlignment m_CheckBoxAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+		private DevAgeDrawing.ContentAlignment m_CheckBoxAlignment = DevAgeDrawing.ContentAlignment.MiddleCenter;
 		/// <summary>
 		/// Image Alignment
 		/// </summary>
-		public DevAge.Drawing.ContentAlignment CheckBoxAlignment
+		public DevAgeDrawing.ContentAlignment CheckBoxAlignment
 		{
 			get{return m_CheckBoxAlignment;}
 			set{m_CheckBoxAlignment = value;}
@@ -64,24 +65,24 @@ namespace SourceGrid.Cells.Views
             PrepareVisualElementCheckBox(context);
         }
 
-        protected override IEnumerable<DevAge.Drawing.VisualElements.IVisualElement> GetElements()
+        protected override IEnumerable<DevAgeDrawing.VisualElements.IVisualElement> GetElements()
         {
             if (ElementCheckBox != null)
                 yield return ElementCheckBox;
 
-            foreach (DevAge.Drawing.VisualElements.IVisualElement v in GetBaseElements())
+            foreach (DevAgeDrawing.VisualElements.IVisualElement v in GetBaseElements())
                 yield return v;
         }
-        private IEnumerable<DevAge.Drawing.VisualElements.IVisualElement> GetBaseElements()
+        private IEnumerable<DevAgeDrawing.VisualElements.IVisualElement> GetBaseElements()
         {
             return base.GetElements();
         }
 
-        private DevAge.Drawing.VisualElements.ICheckBox mElementCheckBox = new DevAge.Drawing.VisualElements.CheckBoxThemed();
+        private DevAgeDrawing.VisualElements.ICheckBox mElementCheckBox = new DevAgeDrawing.VisualElements.CheckBoxThemed();
         /// <summary>
         /// Gets or sets the visual element used to draw the checkbox. Default is DevAge.Drawing.VisualElements.CheckBoxThemed.
         /// </summary>
-        public DevAge.Drawing.VisualElements.ICheckBox ElementCheckBox
+        public DevAgeDrawing.VisualElements.ICheckBox ElementCheckBox
         {
             get { return mElementCheckBox; }
             set { mElementCheckBox = value; }
@@ -90,7 +91,7 @@ namespace SourceGrid.Cells.Views
 
         protected virtual void PrepareVisualElementCheckBox(CellContext context)
         {
-            ElementCheckBox.AnchorArea = new DevAge.Drawing.AnchorArea(CheckBoxAlignment, false);
+            ElementCheckBox.AnchorArea = new DevAgeDrawing.AnchorArea(CheckBoxAlignment, false);
 
             Models.ICheckBox checkBoxModel = (Models.ICheckBox)context.Cell.Model.FindModel(typeof(Models.ICheckBox));
             Models.CheckBoxStatus checkBoxStatus = checkBoxModel.GetCheckBoxStatus(context);
@@ -98,16 +99,16 @@ namespace SourceGrid.Cells.Views
             if (context.CellRange.Contains(context.Grid.MouseCellPosition))
             {
                 if (checkBoxStatus.CheckEnable)
-                    ElementCheckBox.Style = DevAge.Drawing.ControlDrawStyle.Hot;
+                    ElementCheckBox.Style = DevAgeDrawing.ControlDrawStyle.Hot;
                 else
-                    ElementCheckBox.Style = DevAge.Drawing.ControlDrawStyle.Disabled;
+                    ElementCheckBox.Style = DevAgeDrawing.ControlDrawStyle.Disabled;
             }
             else
             {
                 if (checkBoxStatus.CheckEnable)
-                    ElementCheckBox.Style = DevAge.Drawing.ControlDrawStyle.Normal;
+                    ElementCheckBox.Style = DevAgeDrawing.ControlDrawStyle.Normal;
                 else
-                    ElementCheckBox.Style = DevAge.Drawing.ControlDrawStyle.Disabled;
+                    ElementCheckBox.Style = DevAgeDrawing.ControlDrawStyle.Disabled;
             }
 
             ElementCheckBox.CheckBoxState = checkBoxStatus.CheckState;

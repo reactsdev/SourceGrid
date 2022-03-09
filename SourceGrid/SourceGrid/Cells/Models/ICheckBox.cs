@@ -1,5 +1,5 @@
 using System;
-
+using DevAgeDrawing = DevAge.Drawing;
 namespace SourceGrid.Cells.Models
 {
 	/// <summary>
@@ -39,7 +39,7 @@ namespace SourceGrid.Cells.Models
 			CheckEnable = checkEnable;
             Caption = caption;
 
-            mCheckState = DevAge.Drawing.CheckBoxState.Undefined;
+            mCheckState = DevAgeDrawing.CheckBoxState.Undefined;
             Checked = bChecked;
 		}
 		/// <summary>
@@ -48,18 +48,18 @@ namespace SourceGrid.Cells.Models
 		/// <param name="checkEnable"></param>
 		/// <param name="checkState"></param>
 		/// <param name="caption"></param>
-        public CheckBoxStatus(bool checkEnable, DevAge.Drawing.CheckBoxState checkState, string caption)
+        public CheckBoxStatus(bool checkEnable, DevAgeDrawing.CheckBoxState checkState, string caption)
 		{
 			CheckEnable = checkEnable;
 			mCheckState = checkState;
 			Caption = caption;
 		}
 
-        private DevAge.Drawing.CheckBoxState mCheckState;
+        private DevAgeDrawing.CheckBoxState mCheckState;
 		/// <summary>
 		/// Gets or sets the state of the check box.
 		/// </summary>
-		public DevAge.Drawing.CheckBoxState CheckState
+		public DevAgeDrawing.CheckBoxState CheckState
 		{
 			get{return mCheckState;}
 			set{mCheckState = value;}
@@ -77,9 +77,9 @@ namespace SourceGrid.Cells.Models
 		{
 			get
 			{
-                if (CheckState == DevAge.Drawing.CheckBoxState.Checked)
+                if (CheckState == DevAgeDrawing.CheckBoxState.Checked)
                     return true;
-                else if (CheckState == DevAge.Drawing.CheckBoxState.Unchecked)
+                else if (CheckState == DevAgeDrawing.CheckBoxState.Unchecked)
                     return false;
                 else
                     return null;
@@ -87,11 +87,11 @@ namespace SourceGrid.Cells.Models
 			set
 			{
                 if (value == null)
-                    CheckState = DevAge.Drawing.CheckBoxState.Undefined;
+                    CheckState = DevAgeDrawing.CheckBoxState.Undefined;
 				else if (value.Value)
-                    CheckState = DevAge.Drawing.CheckBoxState.Checked;
+                    CheckState = DevAgeDrawing.CheckBoxState.Checked;
 				else
-                    CheckState = DevAge.Drawing.CheckBoxState.Unchecked;
+                    CheckState = DevAgeDrawing.CheckBoxState.Unchecked;
 			}
 		}
 

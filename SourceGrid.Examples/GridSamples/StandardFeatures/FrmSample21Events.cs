@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using SourceGrid;
 using SourceGrid.Cells;
+using Range = SourceGrid.Range;
 
 namespace WindowsFormsSample
 {

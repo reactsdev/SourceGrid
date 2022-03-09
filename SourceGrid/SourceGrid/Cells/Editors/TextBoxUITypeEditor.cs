@@ -2,6 +2,8 @@ using System;
 using System.Windows.Forms;
 using System.ComponentModel;
 using System.Drawing.Design;
+using DevAgeForms = DevAge.Windows.Forms;
+using DevAgeDrawing = DevAge.Drawing;
 
 namespace SourceGrid.Cells.Editors
 {
@@ -28,8 +30,8 @@ namespace SourceGrid.Cells.Editors
 		/// <returns></returns>
 		protected override Control CreateControl()
 		{
-			DevAge.Windows.Forms.TextBoxUITypeEditor editor = new DevAge.Windows.Forms.TextBoxUITypeEditor();
-			editor.BorderStyle = DevAge.Drawing.BorderStyle.None;
+			DevAgeForms.TextBoxUITypeEditor editor = new DevAgeForms.TextBoxUITypeEditor();
+			editor.BorderStyle = DevAgeDrawing.BorderStyle.None;
 			editor.Validator = this;
 
 			object objEditor = System.ComponentModel.TypeDescriptor.GetEditor(base.ValueType,typeof(System.Drawing.Design.UITypeEditor));
@@ -44,11 +46,11 @@ namespace SourceGrid.Cells.Editors
 		/// <summary>
 		/// Gets the control used for editing the cell.
 		/// </summary>
-		public new DevAge.Windows.Forms.TextBoxUITypeEditor Control
+		public new DevAgeForms.TextBoxUITypeEditor Control
 		{
 			get
 			{
-				return (DevAge.Windows.Forms.TextBoxUITypeEditor)base.Control;
+				return (DevAgeForms.TextBoxUITypeEditor)base.Control;
 			}
 		}
 		#endregion

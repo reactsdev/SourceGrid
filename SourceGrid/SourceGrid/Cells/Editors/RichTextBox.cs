@@ -4,7 +4,8 @@ using System.Windows.Forms;
 using System.IO;
 using DevAge.ComponentModel;
 using DevAge;
-
+using DevAgeForms = DevAge.Windows.Forms;
+using DevAgeComponent = DevAge.ComponentModel;
 namespace SourceGrid.Cells.Editors
 {
     /// <summary>
@@ -19,9 +20,9 @@ namespace SourceGrid.Cells.Editors
         /// Constructor
         /// </summary>
         public RichTextBox()
-            : base(typeof(DevAge.Windows.Forms.RichText))
+            : base(typeof(DevAgeForms.RichText))
         {
-            TypeConverter = new DevAge.ComponentModel.Converter.RichTextTypeConverter();
+            TypeConverter = new DevAgeComponent.Converter.RichTextTypeConverter();
         }
 
         #endregion
@@ -33,7 +34,7 @@ namespace SourceGrid.Cells.Editors
         /// <returns></returns>
         protected override Control CreateControl()
         {
-            DevAge.Windows.Forms.DevAgeRichTextBox editor = new DevAge.Windows.Forms.DevAgeRichTextBox();
+            DevAgeForms.DevAgeRichTextBox editor =new DevAgeForms.DevAgeRichTextBox();
             editor.BorderStyle = BorderStyle.None;
             editor.AutoSize = false;
             editor.Validator = this;
@@ -43,11 +44,11 @@ namespace SourceGrid.Cells.Editors
         /// <summary>
         /// Gets the control used for editing the cell.
         /// </summary>
-        public new DevAge.Windows.Forms.DevAgeRichTextBox Control
+        public new DevAgeForms.DevAgeRichTextBox Control
         {
             get
             {
-                return (DevAge.Windows.Forms.DevAgeRichTextBox)base.Control;
+                return (DevAgeForms.DevAgeRichTextBox)base.Control;
             }
         }
 
@@ -61,7 +62,7 @@ namespace SourceGrid.Cells.Editors
         {
             base.OnStartingEdit(cellContext, editorControl);
 
-            DevAge.Windows.Forms.DevAgeRichTextBox l_RchTxtBox = (DevAge.Windows.Forms.DevAgeRichTextBox)editorControl;
+            DevAgeForms.DevAgeRichTextBox l_RchTxtBox = (DevAgeForms.DevAgeRichTextBox)editorControl;
             l_RchTxtBox.WordWrap = cellContext.Cell.View.WordWrap;
 
             // to set the scroll of the textbox to the initial position
@@ -76,7 +77,7 @@ namespace SourceGrid.Cells.Editors
         /// <param name="editValue"></param>
         public override void SetEditValue(object editValue)
         {
-            Control.Value = editValue as DevAge.Windows.Forms.RichText;
+            Control.Value = editValue as DevAgeForms.RichText;
             Control.SelectAll();
         }
 

@@ -9,6 +9,6 @@ namespace QuadTreeLib
     /// </summary>
     public interface IHasRect
     {
-        Range Rectangle { get; }
+        SourceGrid.Range Rectangle { get; }
     }
 }

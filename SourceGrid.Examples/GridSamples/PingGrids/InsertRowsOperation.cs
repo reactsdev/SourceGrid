@@ -2,13 +2,11 @@
 using System.ComponentModel;
 
 using SourceGrid.Examples.Threading;
-using SourceGrid.Extensions.PingGrids;
-using SourceGrid.PingGrid.Backends.DSet;
 using WindowsFormsSample.GridSamples.PingGrids;
 
 namespace WindowsFormsSample
 {
-	public class InsertRowsOperation : AsynchroniousOperation, IProgressCommand
+    public class InsertRowsOperation : AsynchroniousOperation, IProgressCommand
 	{
 		public event OnUpdateHandler Progress;
 		private int from = 0;

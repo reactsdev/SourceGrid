@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Collections.Generic;
 using System.Windows.Forms;
-
+using DevAgeDrawing = DevAge.Drawing;
 namespace SourceGrid.Cells.Views
 {
 	/// <summary>
@@ -18,7 +18,7 @@ namespace SourceGrid.Cells.Views
 		/// </summary>
 		public MultiImages()
 		{
-            ElementsDrawMode = DevAge.Drawing.ElementsDrawMode.Covering;
+            ElementsDrawMode = DevAgeDrawing.ElementsDrawMode.Covering;
 		}
 
 		/// <summary>
@@ -28,28 +28,28 @@ namespace SourceGrid.Cells.Views
         public MultiImages(MultiImages other)
             : base(other)
 		{
-            mImages = (DevAge.Drawing.VisualElements.VisualElementList)other.mImages.Clone();
+            mImages = (DevAgeDrawing.VisualElements.VisualElementList)other.mImages.Clone();
 		}
 		#endregion
 
-        private DevAge.Drawing.VisualElements.VisualElementList mImages = new DevAge.Drawing.VisualElements.VisualElementList();
+        private DevAgeDrawing.VisualElements.VisualElementList mImages = new DevAgeDrawing.VisualElements.VisualElementList();
 		/// <summary>
 		/// Images of the cells
 		/// </summary>
-        public DevAge.Drawing.VisualElements.VisualElementList SubImages
+        public DevAgeDrawing.VisualElements.VisualElementList SubImages
 		{
             get { return mImages; }
 		}
 
-        protected override IEnumerable<DevAge.Drawing.VisualElements.IVisualElement> GetElements()
+        protected override IEnumerable<DevAgeDrawing.VisualElements.IVisualElement> GetElements()
         {
-            foreach (DevAge.Drawing.VisualElements.IVisualElement v in GetBaseElements())
+            foreach (DevAgeDrawing.VisualElements.IVisualElement v in GetBaseElements())
                 yield return v;
 
-            foreach (DevAge.Drawing.VisualElements.IVisualElement v in SubImages)
+            foreach (DevAgeDrawing.VisualElements.IVisualElement v in SubImages)
                 yield return v;
         }
-        private IEnumerable<DevAge.Drawing.VisualElements.IVisualElement> GetBaseElements()
+        private IEnumerable<DevAgeDrawing.VisualElements.IVisualElement> GetBaseElements()
         {
             return base.GetElements();
         }

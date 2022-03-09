@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
-
+using DevAgeComponent = DevAge.ComponentModel;
 using System.Windows.Forms;
 
 
@@ -26,7 +26,7 @@ namespace SourceGrid.Cells.Editors
 		/// </summary>
 		public TimePicker( System.String toStringFormat , string[] p_ParseFormats)
 		{
-			DevAge.ComponentModel.Converter.DateTimeTypeConverter timeConverter = new DevAge.ComponentModel.Converter.DateTimeTypeConverter(toStringFormat, p_ParseFormats);
+			DevAgeComponent.Converter.DateTimeTypeConverter timeConverter = new DevAgeComponent.Converter.DateTimeTypeConverter(toStringFormat, p_ParseFormats);
 			TypeConverter = timeConverter;
 		}
 

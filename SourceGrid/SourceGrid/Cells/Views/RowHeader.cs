@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-
+using DevAgeDrawing = DevAge.Drawing;
 namespace SourceGrid.Cells.Views
 {
 	/// <summary>
@@ -27,7 +27,7 @@ namespace SourceGrid.Cells.Views
 		/// </summary>
 		public RowHeader()
 		{
-            Background = new DevAge.Drawing.VisualElements.RowHeaderThemed();
+            Background = new DevAgeDrawing.VisualElements.RowHeaderThemed();
 		}
 
 		/// <summary>
@@ -52,9 +52,9 @@ namespace SourceGrid.Cells.Views
 
         #region Visual Elements
 
-        public new DevAge.Drawing.VisualElements.IRowHeader Background
+        public new DevAgeDrawing.VisualElements.IRowHeader Background
         {
-            get { return (DevAge.Drawing.VisualElements.IRowHeader)base.Background; }
+            get { return (DevAgeDrawing.VisualElements.IRowHeader)base.Background; }
             set { base.Background = value; }
         }
 

@@ -1,5 +1,6 @@
 using System;
-
+using DevAgeDrawing = DevAge.Drawing;
+using DevAgeForms = DevAge.Windows.Forms;
 namespace SourceGrid.Exporter
 {
 	/// <summary>
@@ -103,7 +104,7 @@ namespace SourceGrid.Exporter
 			return System.Drawing.ColorTranslator.ToHtml(System.Drawing.Color.FromArgb(p_Color.A,p_Color.R, p_Color.G, p_Color.B));
 		}
 
-		public static string BorderToHTMLStyle(DevAge.Drawing.BorderLine p_Border)
+		public static string BorderToHTMLStyle(DevAgeDrawing.BorderLine p_Border)
 		{
 			if (p_Border.Width>0)
 			{
@@ -113,11 +114,11 @@ namespace SourceGrid.Exporter
 				return "none";
 		}
 
-        public static string BorderToHTMLStyle(DevAge.Drawing.IBorder border)
+        public static string BorderToHTMLStyle(DevAgeDrawing.IBorder border)
 		{
-            if (border is DevAge.Drawing.RectangleBorder)
+            if (border is DevAgeDrawing.RectangleBorder)
             {
-                DevAge.Drawing.RectangleBorder brd = (DevAge.Drawing.RectangleBorder)border;
+				DevAgeDrawing.RectangleBorder brd = (DevAgeDrawing.RectangleBorder)border;
 
                 return "border-top:" + BorderToHTMLStyle(brd.Top) +
                     ";border-right:" + BorderToHTMLStyle(brd.Right) +
@@ -273,12 +274,12 @@ namespace SourceGrid.Exporter
 					writer.WriteAttributeString("style", l_Style);
 
 					//alignment
-					writer.WriteAttributeString("align", DevAge.Windows.Forms.Utilities.ContentToHorizontalAlignment(viewCell.TextAlignment).ToString().ToLower());
-					if (DevAge.Drawing.Utilities.IsBottom(viewCell.TextAlignment))
+					writer.WriteAttributeString("align", DevAgeForms.Utilities.ContentToHorizontalAlignment(viewCell.TextAlignment).ToString().ToLower());
+					if (DevAgeDrawing.Utilities.IsBottom(viewCell.TextAlignment))
 						writer.WriteAttributeString("valign", "bottom");
-					else if (DevAge.Drawing.Utilities.IsTop(viewCell.TextAlignment))
+					else if (DevAgeDrawing.Utilities.IsTop(viewCell.TextAlignment))
 						writer.WriteAttributeString("valign", "top");
-					else if (DevAge.Drawing.Utilities.IsMiddle(viewCell.TextAlignment))
+					else if (DevAgeDrawing.Utilities.IsMiddle(viewCell.TextAlignment))
 						writer.WriteAttributeString("valign", "middle");
 				}
 				#endregion
@@ -309,7 +310,7 @@ namespace SourceGrid.Exporter
 					{
 						writer.WriteStartElement("img");
 
-						writer.WriteAttributeString("align", DevAge.Windows.Forms.Utilities.ContentToHorizontalAlignment(viewCell.ImageAlignment).ToString().ToLower());
+						writer.WriteAttributeString("align", DevAgeForms.Utilities.ContentToHorizontalAlignment(viewCell.ImageAlignment).ToString().ToLower());
 						writer.WriteAttributeString("src", ExportImage(img));
 
 						//img

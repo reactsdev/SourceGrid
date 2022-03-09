@@ -1,6 +1,6 @@
 using System;
 using System.Drawing;
-
+using DevAgeDrawing = DevAge.Drawing;
 namespace SourceGrid.Exporter
 {
     /// <summary>
@@ -49,7 +49,7 @@ namespace SourceGrid.Exporter
 
             System.Drawing.Point cellPoint = destinationLocation;
 
-            using (DevAge.Drawing.GraphicsCache graphicsCache = new DevAge.Drawing.GraphicsCache(graphics))
+            using (DevAgeDrawing.GraphicsCache graphicsCache = new DevAgeDrawing.GraphicsCache(graphics))
             {
                 for (int r = rangeToExport.Start.Row; r <= rangeToExport.End.Row; r++)
                 {
@@ -100,7 +100,7 @@ namespace SourceGrid.Exporter
             }
         }
 
-        protected virtual void ExportCell(CellContext context, DevAge.Drawing.GraphicsCache graphics, System.Drawing.Rectangle rectangle)
+        protected virtual void ExportCell(CellContext context, DevAgeDrawing.GraphicsCache graphics, System.Drawing.Rectangle rectangle)
         {
             if (context.Cell != null)
             {

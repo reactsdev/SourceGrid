@@ -1,7 +1,8 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-
+using DevAgeDrawings = DevAge.Drawing;
+using DevAgeForms = DevAge.Windows.Forms;
 namespace SourceGrid.Cells.Controllers
 {
 	/// <summary>
@@ -21,8 +22,8 @@ namespace SourceGrid.Cells.Controllers
 		/// <summary>
 		/// Border used to calculate the region to enable the row selection
 		/// </summary>
-		public DevAge.Drawing.RectangleBorder LogicalBorder = new DevAge.Drawing.RectangleBorder(new DevAge.Drawing.BorderLine(System.Drawing.Color.Black, 4), new DevAge.Drawing.BorderLine(System.Drawing.Color.Black, 4) );
-		private MouseCursor mSelectionCursor = new MouseCursor(DevAge.Windows.Forms.Resources.CursorRightArrow, false);
+		public DevAgeDrawings.RectangleBorder LogicalBorder = new DevAgeDrawings.RectangleBorder(new DevAgeDrawings.BorderLine(System.Drawing.Color.Black, 4), new DevAgeDrawings.BorderLine(System.Drawing.Color.Black, 4) );
+		private MouseCursor mSelectionCursor = new MouseCursor(DevAgeForms.Resources.CursorRightArrow, false);
 
 		//Non uso questo evento altrimenti non verrebbero applicate le regole di selezione del tasto Shift
 //		public override void OnClick(PositionEventArgs e)
@@ -40,9 +41,9 @@ namespace SourceGrid.Cells.Controllers
 			Point l_MousePoint = new Point(e.X, e.Y);
 
 			float distance;
-			DevAge.Drawing.RectanglePartType partType = LogicalBorder.GetPointPartType(l_CellRect, l_MousePoint, out distance);
+			DevAgeDrawings.RectanglePartType partType = LogicalBorder.GetPointPartType(l_CellRect, l_MousePoint, out distance);
 
-			if ( partType == DevAge.Drawing.RectanglePartType.ContentArea)
+			if ( partType == DevAgeDrawings.RectanglePartType.ContentArea)
 				mSelectionCursor.ApplyCursor(sender, e);
 		}
 

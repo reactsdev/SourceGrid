@@ -301,7 +301,7 @@ namespace SourceGrid
 		/// <param name="p_Range1"></param>
 		/// <param name="p_Range2"></param>
 		/// <returns></returns>
-		public static RangeRegion Union(Range p_Range1, Range p_Range2)
+		public static RangeRegion Union(SourceGrid.Range p_Range1, Range p_Range2)
 		{
 			RangeRegion range = new RangeRegion();
 			range.Add(p_Range1);
@@ -401,16 +401,16 @@ namespace SourceGrid
 				//Top Left
 				if (this.Start.Row < intersection.Start.Row && 
 					this.Start.Column < intersection.Start.Column)
-					excluded.Add( new Range(this.Start.Row, this.Start.Column, intersection.Start.Row - 1, intersection.Start.Column - 1) );
+					excluded.Add( new SourceGrid.Range(this.Start.Row, this.Start.Column, intersection.Start.Row - 1, intersection.Start.Column - 1) );
 
 				//Top
 				if (this.Start.Row < intersection.Start.Row)
-					excluded.Add( new Range(this.Start.Row, intersection.Start.Column, intersection.Start.Row - 1, intersection.End.Column) );
+					excluded.Add( new SourceGrid.Range(this.Start.Row, intersection.Start.Column, intersection.Start.Row - 1, intersection.End.Column) );
 
 				//Top Right
 				if (this.Start.Row < intersection.Start.Row && 
 					this.End.Column > intersection.End.Column)
-					excluded.Add( new Range(this.Start.Row, intersection.End.Column + 1, intersection.Start.Row -1, this.End.Column) );
+					excluded.Add( new SourceGrid.Range(this.Start.Row, intersection.End.Column + 1, intersection.Start.Row -1, this.End.Column) );
 
 				//----------
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using DevAgeDrawing = DevAge.Drawing;
 
 namespace SourceGrid.Cells.Views
 {
@@ -29,7 +30,7 @@ namespace SourceGrid.Cells.Views
 		/// </summary>
 		public ColumnHeader()
 		{
-            Background = new DevAge.Drawing.VisualElements.ColumnHeaderThemed();
+            Background = new DevAgeDrawing.VisualElements.ColumnHeaderThemed();
 		}
 
 		/// <summary>
@@ -54,9 +55,9 @@ namespace SourceGrid.Cells.Views
 
         #region Visual Elements
 
-        public new DevAge.Drawing.VisualElements.IColumnHeader Background
+        public new DevAgeDrawing.VisualElements.IColumnHeader Background
         {
-            get { return (DevAge.Drawing.VisualElements.IColumnHeader)base.Background; }
+            get { return (DevAgeDrawing.VisualElements.IColumnHeader)base.Background; }
             set { base.Background = value; }
         }
 
@@ -67,24 +68,24 @@ namespace SourceGrid.Cells.Views
             PrepareVisualElementSortIndicator(context);
         }
 
-        protected override IEnumerable<DevAge.Drawing.VisualElements.IVisualElement> GetElements()
+        protected override IEnumerable<DevAgeDrawing.VisualElements.IVisualElement> GetElements()
         {
             if (ElementSort != null)
                 yield return ElementSort;
 
-            foreach (DevAge.Drawing.VisualElements.IVisualElement v in GetBaseElements())
+            foreach (DevAgeDrawing.VisualElements.IVisualElement v in GetBaseElements())
                 yield return v;
         }
-        private IEnumerable<DevAge.Drawing.VisualElements.IVisualElement> GetBaseElements()
+        private IEnumerable<DevAgeDrawing.VisualElements.IVisualElement> GetBaseElements()
         {
             return base.GetElements();
         }
 
-        private DevAge.Drawing.VisualElements.ISortIndicator mElementSort = new DevAge.Drawing.VisualElements.SortIndicator();
+        private DevAgeDrawing.VisualElements.ISortIndicator mElementSort = new DevAgeDrawing.VisualElements.SortIndicator();
         /// <summary>
         /// Gets or sets the visual element used to draw the sort indicator. Default is DevAge.Drawing.VisualElements.SortIndicator
         /// </summary>
-        public DevAge.Drawing.VisualElements.ISortIndicator ElementSort
+        public DevAgeDrawing.VisualElements.ISortIndicator ElementSort
         {
             get { return mElementSort; }
             set { mElementSort = value; }
@@ -99,7 +100,7 @@ namespace SourceGrid.Cells.Views
                 ElementSort.SortStyle = status.Style;
             }
             else
-                ElementSort.SortStyle = DevAge.Drawing.HeaderSortStyle.None;
+                ElementSort.SortStyle = DevAgeDrawing.HeaderSortStyle.None;
 
         }
         #endregion

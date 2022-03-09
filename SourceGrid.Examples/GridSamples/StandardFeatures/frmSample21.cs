@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 using SourceGrid;
 using SourceGrid.Cells.Controllers;
+using Range = SourceGrid.Range;
 
 namespace WindowsFormsSample
 {

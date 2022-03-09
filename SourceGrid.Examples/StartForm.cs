@@ -15,19 +15,15 @@ namespace WindowsFormsSample
 	/// </summary>
 	public class StartForm : System.Windows.Forms.Form
 	{
-		private System.Windows.Forms.MainMenu mainMenu1;
-		private System.Windows.Forms.MenuItem mnFile;
-		private System.Windows.Forms.MenuItem mnExit;
-		private System.Windows.Forms.MenuItem mnHelp;
-		private System.Windows.Forms.MenuItem mnAbout;
+		private ContextMenuStrip mainMenu1;
+		private ToolStripMenuItem mnFile;
+		private ToolStripMenuItem mnExit;
+		private ToolStripMenuItem mnHelp;
+		private ToolStripMenuItem mnAbout;
 		private SourceGrid.Grid grid1;
-		
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.Container components = null;
+        private IContainer components;
 
-		public StartForm()
+        public StartForm()
 		{
 			//
 			// Required for Windows Form Designer support
@@ -57,71 +53,82 @@ namespace WindowsFormsSample
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.mainMenu1 = new System.Windows.Forms.MainMenu();
-			this.mnFile = new System.Windows.Forms.MenuItem();
-			this.mnExit = new System.Windows.Forms.MenuItem();
-			this.mnHelp = new System.Windows.Forms.MenuItem();
-			this.mnAbout = new System.Windows.Forms.MenuItem();
-			this.grid1 = new SourceGrid.Grid();
-			this.SuspendLayout();
-			// 
-			// mainMenu1
-			// 
-			this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-																					  this.mnFile,
-																					  this.mnHelp});
-			// 
-			// mnFile
-			// 
-			this.mnFile.Index = 0;
-			this.mnFile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-																				   this.mnExit});
-			this.mnFile.Text = "File";
-			// 
-			// mnExit
-			// 
-			this.mnExit.Index = 0;
-			this.mnExit.Text = "Exit";
-			this.mnExit.Click += new System.EventHandler(this.mnExit_Click);
-			// 
-			// mnHelp
-			// 
-			this.mnHelp.Index = 1;
-			this.mnHelp.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-																				   this.mnAbout});
-			this.mnHelp.Text = "Help";
-			// 
-			// mnAbout
-			// 
-			this.mnAbout.Index = 0;
-			this.mnAbout.Text = "About";
-			// 
-			// grid1
-			// 
-			this.grid1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-				| System.Windows.Forms.AnchorStyles.Left) 
-				| System.Windows.Forms.AnchorStyles.Right)));
-			this.grid1.AutoStretchColumnsToFitWidth = false;
-			this.grid1.AutoStretchRowsToFitHeight = false;
-			this.grid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.grid1.CustomSort = false;
-			this.grid1.Location = new System.Drawing.Point(4, 4);
-			this.grid1.Name = "grid1";
-			this.grid1.OverrideCommonCmdKey = true;
-			this.grid1.Size = new System.Drawing.Size(616, 296);
-			this.grid1.SpecialKeys = SourceGrid.GridSpecialKeys.Default;
-			this.grid1.TabIndex = 0;
-			// 
-			// StartForm
-			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.BackColor = System.Drawing.SystemColors.Window;
-			this.ClientSize = new System.Drawing.Size(624, 305);
-			this.Controls.Add(this.grid1);
-			this.Menu = this.mainMenu1;
-			this.Name = "StartForm";
-			this.Text = "Examples Explorer";
-			this.ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            this.mainMenu1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.grid1 = new SourceGrid.Grid();
+            this.mainMenu1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // mainMenu1
+            // 
+            this.mainMenu1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mainMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnFile,
+            this.mnHelp});
+            this.mainMenu1.Name = "mainMenu1";
+            this.mainMenu1.Size = new System.Drawing.Size(111, 52);
+            // 
+            // mnFile
+            // 
+            this.mnFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnExit});
+            this.mnFile.Name = "mnFile";
+            this.mnFile.Size = new System.Drawing.Size(110, 24);
+            this.mnFile.Text = "File";
+            // 
+            // mnExit
+            // 
+            this.mnExit.Name = "mnExit";
+            this.mnExit.Size = new System.Drawing.Size(116, 26);
+            this.mnExit.Text = "Exit";
+            this.mnExit.Click += new System.EventHandler(this.mnExit_Click);
+            // 
+            // mnHelp
+            // 
+            this.mnHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnAbout});
+            this.mnHelp.Name = "mnHelp";
+            this.mnHelp.Size = new System.Drawing.Size(110, 24);
+            this.mnHelp.Text = "Help";
+            // 
+            // mnAbout
+            // 
+            this.mnAbout.Name = "mnAbout";
+            this.mnAbout.Size = new System.Drawing.Size(133, 26);
+            this.mnAbout.Text = "About";
+            // 
+            // grid1
+            // 
+            this.grid1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grid1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.grid1.EnableSort = true;
+            this.grid1.Location = new System.Drawing.Point(6, 6);
+            this.grid1.Name = "grid1";
+            this.grid1.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid1.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid1.Size = new System.Drawing.Size(612, 292);
+            this.grid1.TabIndex = 0;
+            this.grid1.TabStop = true;
+            this.grid1.ToolTipText = "";
+            // 
+            // StartForm
+            // 
+            this.AutoScaleBaseSize = new System.Drawing.Size(7, 20);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(624, 305);
+            this.ContextMenuStrip = this.mainMenu1;
+            this.Controls.Add(this.grid1);
+            this.Name = "StartForm";
+            this.Text = "Examples Explorer";
+            this.Load += new System.EventHandler(this.StartForm_Load);
+            this.mainMenu1.ResumeLayout(false);
+            this.ResumeLayout(false);
 
 		}
 		#endregion
@@ -260,5 +267,10 @@ namespace WindowsFormsSample
 		{
 			Close();
 		}
-	}
+
+        private void StartForm_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

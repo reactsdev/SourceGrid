@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-
+using DevAgeForms = DevAge.Windows.Forms;
 namespace SourceGrid.Cells.Controllers
 {
     /// <summary>
@@ -36,15 +36,15 @@ namespace SourceGrid.Cells.Controllers
             base.OnValueChanging(sender, e);
 
             // only check if event args is of known type if event is not of type rich text
-            if (!(e.NewValue is DevAge.Windows.Forms.RichText))
+            if (!(e.NewValue is DevAgeForms.RichText))
             {
                 Editors.RichTextBox richEditor = (Editors.RichTextBox)sender.Cell.Editor;
-                DevAge.Windows.Forms.DevAgeRichTextBox richTextBox = richEditor.Control;
+                DevAgeForms.DevAgeRichTextBox richTextBox = richEditor.Control;
 
                 // if editor is not open, assign value and select all text
                 if (sender.Cell.Editor.EditCell == null)
                 {
-                    richTextBox.Value = sender.Value as DevAge.Windows.Forms.RichText;
+                    richTextBox.Value = sender.Value as DevAgeForms.RichText;
                     richTextBox.SelectAll();
                 }
 
@@ -64,9 +64,9 @@ namespace SourceGrid.Cells.Controllers
                 {
                     richTextBox.SelectionAlignment = (HorizontalAlignment)e.NewValue;
                 }
-                else if (e.NewValue is DevAge.Windows.Forms.EffectType)
+                else if (e.NewValue is DevAgeForms.EffectType)
                 {
-                    richTextBox.SelectionEffect = (DevAge.Windows.Forms.EffectType)e.NewValue;   
+                    richTextBox.SelectionEffect = (DevAgeForms.EffectType)e.NewValue;   
                 }
 
                 // if editor is not open, use changed value for cell

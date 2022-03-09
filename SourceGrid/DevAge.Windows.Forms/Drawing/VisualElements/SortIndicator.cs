@@ -60,9 +60,9 @@ namespace DevAge.Drawing.VisualElements
             {
                 mHeaderSortStyle = value;
                 if (mHeaderSortStyle == HeaderSortStyle.Ascending)
-                    Value = Properties.Resources.ICO_SortUp;
+                    Value = SourceGrid.DevAge.Windows.Forms.Properties.Resources.ICO_SortUp;
                 else if (mHeaderSortStyle == HeaderSortStyle.Descending)
-                    Value = Properties.Resources.ICO_SortDown;
+                    Value = SourceGrid.DevAge.Windows.Forms.Properties.Resources.ICO_SortDown;
                 else
                     Value = null;
             }

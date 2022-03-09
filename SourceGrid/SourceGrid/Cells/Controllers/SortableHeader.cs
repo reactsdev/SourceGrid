@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using DevAgeDrawing = DevAge.Drawing;
 
 namespace SourceGrid.Cells.Controllers
 {
@@ -17,7 +18,7 @@ namespace SourceGrid.Cells.Controllers
 		/// <summary>
 		/// Border used to calculate the region where the sort is enabled.
 		/// </summary>
-		public DevAge.Drawing.RectangleBorder LogicalBorder = new DevAge.Drawing.RectangleBorder(new DevAge.Drawing.BorderLine(System.Drawing.Color.Black, 4), new DevAge.Drawing.BorderLine(System.Drawing.Color.Black, 4) );
+		public DevAgeDrawing.RectangleBorder LogicalBorder = new DevAgeDrawing.RectangleBorder(new DevAgeDrawing.BorderLine(System.Drawing.Color.Black, 4), new DevAgeDrawing.BorderLine(System.Drawing.Color.Black, 4) );
 
 		#region Constructor
 		/// <summary>
@@ -55,16 +56,16 @@ namespace SourceGrid.Cells.Controllers
 			Point currentPoint = sender.Grid.PointToClient(System.Windows.Forms.Control.MousePosition);
 			Rectangle cellRect = sender.Grid.PositionToRectangle(sender.Position);
 			float distance;
-			DevAge.Drawing.RectanglePartType partType = LogicalBorder.GetPointPartType(cellRect, currentPoint, out distance);
+			DevAgeDrawing.RectanglePartType partType = LogicalBorder.GetPointPartType(cellRect, currentPoint, out distance);
 
 			//eseguo il sort solo se non sono attualmente in resize
 			if ( IsSortEnable(sender) &&
-			    partType == DevAge.Drawing.RectanglePartType.ContentArea &&
+			    partType == DevAgeDrawing.RectanglePartType.ContentArea &&
 			    e.Button == System.Windows.Forms.MouseButtons.Left )
 			{
 				Models.ISortableHeader sortHeader = (Models.ISortableHeader)sender.Cell.Model.FindModel(typeof(Models.ISortableHeader));
 				Models.SortStatus l_Status = sortHeader.GetSortStatus(sender);
-				if (l_Status.Style == DevAge.Drawing.HeaderSortStyle.Ascending)
+				if (l_Status.Style == DevAgeDrawing.HeaderSortStyle.Ascending)
 					SortColumn(sender, false, l_Status.Comparer);
 				else
 					SortColumn(sender, true, l_Status.Comparer);
@@ -153,9 +154,9 @@ namespace SourceGrid.Cells.Controllers
 					//Sort
 					sender.Grid.SortRangeRows(l_RangeToSort, sender.Position.Column, p_bAscending, p_Comparer);
 					if (p_bAscending)
-						modelSortable.SetSortMode(sender, DevAge.Drawing.HeaderSortStyle.Ascending);
+						modelSortable.SetSortMode(sender, DevAgeDrawing.HeaderSortStyle.Ascending);
 					else
-						modelSortable.SetSortMode(sender, DevAge.Drawing.HeaderSortStyle.Descending);
+						modelSortable.SetSortMode(sender, DevAgeDrawing.HeaderSortStyle.Descending);
 					
 					//Remove the image from others ColHeaderSort
 					for (int r  = l_RangeHeader.Start.Row; r <= l_RangeHeader.End.Row; r++)
@@ -170,7 +171,7 @@ namespace SourceGrid.Cells.Controllers
 							{
 								Models.ISortableHeader header = (Models.ISortableHeader)tmpCell.Model.FindModel(typeof(Models.ISortableHeader));
 
-								header.SetSortMode(new CellContext(sender.Grid, new Position(r, c), tmpCell), DevAge.Drawing.HeaderSortStyle.None);
+								header.SetSortMode(new CellContext(sender.Grid, new Position(r, c), tmpCell), DevAgeDrawing.HeaderSortStyle.None);
 							}
 						}
 					}

@@ -1,5 +1,6 @@
 using System;
-
+using DevAgeDrawing = DevAge.Drawing;
+using DevAgeComponent = DevAge.ComponentModel;
 namespace SourceGrid.Cells.Models
 {
 	public class NullValueModel : IValueModel
@@ -107,7 +108,7 @@ namespace SourceGrid.Cells.Models
 
 			object val = cellContext.Cell.Model.ValueModel.GetValue(cellContext);
 			if (val == null)
-				return new CheckBoxStatus(enableEdit, DevAge.Drawing.CheckBoxState.Undefined, m_Caption);
+				return new CheckBoxStatus(enableEdit, DevAgeDrawing.CheckBoxState.Undefined, m_Caption);
 			else if (val is bool)
 				return new CheckBoxStatus(enableEdit, (bool)val, m_Caption);
 			else
@@ -142,14 +143,14 @@ namespace SourceGrid.Cells.Models
 			return m_SortStatus;
 		}
 
-        public void SetSortMode(CellContext cellContext, DevAge.Drawing.HeaderSortStyle pStyle)
+        public void SetSortMode(CellContext cellContext, DevAgeDrawing.HeaderSortStyle pStyle)
 		{
 			m_SortStatus.Style = pStyle;
 		}
 
 		#endregion
 
-        private SortStatus m_SortStatus = new SortStatus(DevAge.Drawing.HeaderSortStyle.None, null);
+        private SortStatus m_SortStatus = new SortStatus(DevAgeDrawing.HeaderSortStyle.None, null);
 		public SortStatus SortStatus
 		{
 			get{return m_SortStatus;}
@@ -215,7 +216,7 @@ namespace SourceGrid.Cells.Models
 	{
 		public static readonly ValueImage Default = new ValueImage();
 
-		private DevAge.ComponentModel.Validator.ValidatorTypeConverter imageConverter = new DevAge.ComponentModel.Validator.ValidatorTypeConverter(typeof(System.Drawing.Image));
+		private DevAgeComponent.Validator.ValidatorTypeConverter imageConverter = new DevAgeComponent.Validator.ValidatorTypeConverter(typeof(System.Drawing.Image));
 		#region IImage Members
 
 		public System.Drawing.Image GetImage(CellContext cellContext)

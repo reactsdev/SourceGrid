@@ -10,4 +10,18 @@
     <FallbackCulture>en-US</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\DropDown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\ErrorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\ErrorDialogDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DevAge.Windows.Forms\Windows\Forms\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>

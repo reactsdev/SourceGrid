@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-
+using DevAgeDrawing = DevAge.Drawing;
 using SourceGrid.Cells;
 
 namespace SourceGrid
@@ -611,7 +611,7 @@ namespace SourceGrid
 			base.OnRangePaint(e);
 		}
 
-		protected override void PaintCell(DevAge.Drawing.GraphicsCache graphics, CellContext cellContext, RectangleF drawRectangle)
+		protected override void PaintCell(DevAgeDrawing.GraphicsCache graphics, CellContext cellContext, RectangleF drawRectangle)
 		{
 			Range cellRange = PositionToCellRange(cellContext.Position);
 			if (cellRange.ColumnsCount == 1 && cellRange.RowsCount == 1)

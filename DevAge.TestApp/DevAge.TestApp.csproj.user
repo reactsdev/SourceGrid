@@ -10,4 +10,42 @@
     <FallbackCulture>en-US</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Samples\frmSample30.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Samples\frmSample31.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Samples\frmSample32.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Samples\frmSample33.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Samples\frmSample34.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Samples\frmSample35.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Samples\frmSample36.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Samples\frmSample37.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Samples\frmSample38.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Samples\frmSample39.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Samples\frmSample40.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>

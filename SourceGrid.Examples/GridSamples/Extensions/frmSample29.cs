@@ -4,13 +4,14 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Data;
+using DevAge.ComponentModel;
 
 namespace WindowsFormsSample
 {
-	/// <summary>
-	/// Summary description for frmSample9.
-	/// </summary>
-	[Sample("SourceGrid - Extensions", 29, "Advanced Data Binding - DataGrid, alternate backcolor, ..")]
+    /// <summary>
+    /// Summary description for frmSample9.
+    /// </summary>
+    [Sample("SourceGrid - Extensions", 29, "Advanced Data Binding - DataGrid, alternate backcolor, ..")]
 	public class frmSample29 : System.Windows.Forms.Form
 	{
 		private SourceGrid.DataGrid dataGrid;
@@ -134,7 +135,7 @@ namespace WindowsFormsSample
 			//Header row
 			dataGrid.Columns.Insert(0, SourceGrid.DataGridColumn.CreateRowHeader(dataGrid));
 
-			DevAge.ComponentModel.IBoundList bindList = new DevAge.ComponentModel.BoundDataView(mView);
+            IBoundList bindList = new DevAge.ComponentModel.BoundDataView(mView);
 
 			//Create default columns
 			CreateColumns(dataGrid.Columns, bindList);
@@ -145,7 +146,7 @@ namespace WindowsFormsSample
 		}
 
 		private void CreateColumns(SourceGrid.DataGridColumns columns,
-		                           DevAge.ComponentModel.IBoundList bindList)
+                                   IBoundList bindList)
 		{
 			SourceGrid.Cells.Editors.TextBoxNumeric numericEditor = new SourceGrid.Cells.Editors.TextBoxNumeric(typeof(decimal));
 			numericEditor.TypeConverter = new DevAge.ComponentModel.Converter.NumberTypeConverter(typeof(decimal), "N");

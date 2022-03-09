@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using DevAgeDrawings = DevAge.Drawing;
 
 namespace SourceGrid.Cells.Controllers
 {
@@ -25,7 +26,7 @@ namespace SourceGrid.Cells.Controllers
         /// <summary>
         /// Border used to calculate the region where the resize is enabled.
         /// </summary>
-        public DevAge.Drawing.RectangleBorder LogicalBorder = new DevAge.Drawing.RectangleBorder(new DevAge.Drawing.BorderLine(System.Drawing.Color.Black, 4), new DevAge.Drawing.BorderLine(System.Drawing.Color.Black, 4));
+        public DevAgeDrawings.RectangleBorder LogicalBorder = new DevAgeDrawings.RectangleBorder(new DevAgeDrawings.BorderLine(System.Drawing.Color.Black, 4), new DevAgeDrawings.BorderLine(System.Drawing.Color.Black, 4));
 
         /// <summary>
         /// Constructor
@@ -51,13 +52,13 @@ namespace SourceGrid.Cells.Controllers
             Rectangle l_CellRect = sender.Grid.PositionToRectangle(sender.Position);
             Point mousePoint = new Point(e.X, e.Y);
 
-            DevAge.Drawing.RectanglePartType partType = LogicalBorder.GetPointPartType(l_CellRect, mousePoint, out mDistanceFromBorder);
+            DevAgeDrawings.RectanglePartType partType = LogicalBorder.GetPointPartType(l_CellRect, mousePoint, out mDistanceFromBorder);
 
             if (((ResizeMode & CellResizeMode.Width) == CellResizeMode.Width) &&
-                        partType == DevAge.Drawing.RectanglePartType.RightBorder)
+                        partType == DevAgeDrawings.RectanglePartType.RightBorder)
                 m_IsWidthResize = true;
             else if (((ResizeMode & CellResizeMode.Height) == CellResizeMode.Height) &&
-                        partType == DevAge.Drawing.RectanglePartType.BottomBorder)
+                        partType == DevAgeDrawings.RectanglePartType.BottomBorder)
                 m_IsHeightResize = true;
         }
 
@@ -80,7 +81,7 @@ namespace SourceGrid.Cells.Controllers
             Point mousePoint = new Point(e.X, e.Y);
 
             float dummy;
-            DevAge.Drawing.RectanglePartType partType = LogicalBorder.GetPointPartType(cellRect, mousePoint, out dummy);
+            DevAgeDrawings.RectanglePartType partType = LogicalBorder.GetPointPartType(cellRect, mousePoint, out dummy);
 
             //sono già in fase di resizing
             if (sender.Grid.MouseDownPosition == sender.Position)
@@ -108,9 +109,9 @@ namespace SourceGrid.Cells.Controllers
             }
             else
             {
-                if (partType == DevAge.Drawing.RectanglePartType.RightBorder && (ResizeMode & CellResizeMode.Width) == CellResizeMode.Width)
+                if (partType == DevAgeDrawings.RectanglePartType.RightBorder && (ResizeMode & CellResizeMode.Width) == CellResizeMode.Width)
                     mWidthCursor.ApplyCursor(sender, e);
-                else if (partType == DevAge.Drawing.RectanglePartType.BottomBorder && (ResizeMode & CellResizeMode.Height) == CellResizeMode.Height)
+                else if (partType == DevAgeDrawings.RectanglePartType.BottomBorder && (ResizeMode & CellResizeMode.Height) == CellResizeMode.Height)
                     mHeightCursor.ApplyCursor(sender, e);
                 else
                 {
@@ -153,15 +154,15 @@ namespace SourceGrid.Cells.Controllers
             Rectangle cellRect = sender.Grid.PositionToRectangle(sender.Position);
 
             float distance;
-            DevAge.Drawing.RectanglePartType partType = LogicalBorder.GetPointPartType(cellRect, currentPoint, out distance);
+            DevAgeDrawings.RectanglePartType partType = LogicalBorder.GetPointPartType(cellRect, currentPoint, out distance);
 
             if ((ResizeMode & CellResizeMode.Width) == CellResizeMode.Width &&
-                partType == DevAge.Drawing.RectanglePartType.RightBorder)
+                partType == DevAgeDrawings.RectanglePartType.RightBorder)
             {
                 sender.Grid.Columns.AutoSizeColumn(sender.Position.Column);
             }
             else if ((ResizeMode & CellResizeMode.Height) == CellResizeMode.Height &&
-                partType == DevAge.Drawing.RectanglePartType.BottomBorder)
+                partType == DevAgeDrawings.RectanglePartType.BottomBorder)
             {
                 sender.Grid.Rows.AutoSizeRow(sender.Position.Row);
             }

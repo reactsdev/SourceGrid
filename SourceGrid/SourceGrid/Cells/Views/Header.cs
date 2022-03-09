@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using DevAge.Drawing;
+using DevAgeDrawing =  DevAge.Drawing;
 
 namespace SourceGrid.Cells.Views
 {
@@ -11,7 +11,7 @@ namespace SourceGrid.Cells.Views
 	[Serializable]
 	public class Header : Cell
 	{
-        public new static RectangleBorder DefaultBorder = RectangleBorder.NoBorder;
+        public new static DevAgeDrawing.RectangleBorder DefaultBorder = DevAgeDrawing.RectangleBorder.NoBorder;
 
 		/// <summary>
 		/// Represents a default Header, with a 3D border and a LightGray BackColor
@@ -30,7 +30,7 @@ namespace SourceGrid.Cells.Views
 		/// </summary>
 		public Header()
 		{
-            Background = new DevAge.Drawing.VisualElements.HeaderThemed();
+            Background = new DevAgeDrawing.VisualElements.HeaderThemed();
             Border = Header.DefaultBorder;
 		}
 
@@ -40,7 +40,7 @@ namespace SourceGrid.Cells.Views
 		/// <param name="p_Source"></param>
 		public Header(Header p_Source):base(p_Source)
 		{
-            Background = (DevAge.Drawing.VisualElements.IHeader)p_Source.Background.Clone();
+            Background = (DevAgeDrawing.VisualElements.IHeader)p_Source.Background.Clone();
         }
 		#endregion
 
@@ -57,9 +57,9 @@ namespace SourceGrid.Cells.Views
 
         #region Visual Elements
 
-        public new DevAge.Drawing.VisualElements.IHeader Background
+        public new DevAgeDrawing.VisualElements.IHeader Background
         {
-            get { return (DevAge.Drawing.VisualElements.IHeader)base.Background; }
+            get { return (DevAgeDrawing.VisualElements.IHeader)base.Background; }
             set { base.Background = value; }
         }
 
@@ -68,11 +68,11 @@ namespace SourceGrid.Cells.Views
             base.PrepareView(context);
 
             if (context.CellRange.Contains(context.Grid.MouseDownPosition))
-                Background.Style = DevAge.Drawing.ControlDrawStyle.Pressed;
+                Background.Style = DevAgeDrawing.ControlDrawStyle.Pressed;
             else if (context.CellRange.Contains(context.Grid.MouseCellPosition))
-                Background.Style = DevAge.Drawing.ControlDrawStyle.Hot;
+                Background.Style = DevAgeDrawing.ControlDrawStyle.Hot;
             else
-                Background.Style = DevAge.Drawing.ControlDrawStyle.Normal;
+                Background.Style = DevAgeDrawing.ControlDrawStyle.Normal;
         }
         #endregion
 	}

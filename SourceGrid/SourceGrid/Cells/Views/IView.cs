@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using DevAgeDrawing = DevAge.Drawing;
 
 namespace SourceGrid.Cells.Views
 {
@@ -34,7 +35,7 @@ namespace SourceGrid.Cells.Views
 		/// <summary>
 		/// Text Alignment.
 		/// </summary>
-		DevAge.Drawing.ContentAlignment TextAlignment
+		DevAgeDrawing.ContentAlignment TextAlignment
 		{
 			get;
 			set;
@@ -42,9 +43,9 @@ namespace SourceGrid.Cells.Views
 
 
 		/// <summary>
-        /// The normal border of a cell. Usually it is an instance of a DevAge.Drawing.RectangleBorder structure
+		/// The normal border of a cell. Usually it is an instance of a DevAge.Drawing.RectangleBorder structure
 		/// </summary>
-		DevAge.Drawing.IBorder Border
+		DevAgeDrawing.IBorder Border
 		{
 			get;
 			set;
@@ -75,7 +76,7 @@ namespace SourceGrid.Cells.Views
         /// <param name="graphics">Paint arguments</param>
         /// <param name="rectangle">Rectangle where draw the current cell</param>
 		void DrawCell(CellContext cellContext,
-			DevAge.Drawing.GraphicsCache graphics, 
+			DevAgeDrawing.GraphicsCache graphics, 
 			System.Drawing.RectangleF rectangle);
 
 

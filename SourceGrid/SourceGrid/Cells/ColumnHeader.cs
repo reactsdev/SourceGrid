@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using DevAgeDrawing = DevAge.Drawing;
 
 namespace SourceGrid.Cells.Virtual
 {
@@ -156,7 +157,7 @@ namespace SourceGrid.Cells
 		/// <summary>
 		/// Sort style.
 		/// </summary>
-		public DevAge.Drawing.HeaderSortStyle SortStyle
+		public DevAgeDrawing.HeaderSortStyle SortStyle
 		{
 			get{return SortStatus.Style;}
 			set{SortStatus = new SourceGrid.Cells.Models.SortStatus(value, SortStatus.Comparer);}

@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Collections;
 using System.Windows.Forms;
+using DevAgeDrawing = DevAge.Drawing;
 
 namespace SourceGrid
 {
@@ -291,7 +292,7 @@ namespace SourceGrid
 	public class RangePaintEventArgs : EventArgs
 	{
 		public RangePaintEventArgs(GridVirtual grid,
-		                           DevAge.Drawing.GraphicsCache graphicsCache,
+		                           DevAgeDrawing.GraphicsCache graphicsCache,
 		                           Range drawingRange)
 		{
 			mGrid = grid;
@@ -305,8 +306,8 @@ namespace SourceGrid
 			get { return mGrid; }
 		}
 
-		private DevAge.Drawing.GraphicsCache mGraphicsCache;
-		public DevAge.Drawing.GraphicsCache GraphicsCache
+		private DevAgeDrawing.GraphicsCache mGraphicsCache;
+		public DevAgeDrawing.GraphicsCache GraphicsCache
 		{
 			get { return mGraphicsCache; }
 			set { mGraphicsCache = value; }

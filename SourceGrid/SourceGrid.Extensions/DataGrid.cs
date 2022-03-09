@@ -1,9 +1,10 @@
+using DevAge.ComponentModel;
 using SourceGrid.Selection;
 using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
-using DevAge.ComponentModel;
+using DevAgeComponent = DevAge.ComponentModel;
 
 namespace SourceGrid
 {
@@ -55,7 +56,7 @@ namespace SourceGrid
 			return selObj;
 		}
 
-		private DevAge.ComponentModel.IBoundList mBoundList;
+		private DevAgeComponent.IBoundList mBoundList;
 
 		public override bool EnableSort{
 			get{
@@ -77,7 +78,7 @@ namespace SourceGrid
 		///  (that can be used to bind to a generic List) or BoundDataView (that can be used to bind to a DataView).
 		/// </summary>
 		[Browsable(false), DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-		public DevAge.ComponentModel.IBoundList DataSource
+		public DevAgeComponent.IBoundList DataSource
 		{
 			get { return mBoundList; }
 			set
@@ -119,7 +120,7 @@ namespace SourceGrid
 			Rows.ResetRowHeigth();
 		}
 
-		void mBoundList_ItemDeleted ( object sender, DevAge.ComponentModel.ItemDeletedEventArgs e )
+		void mBoundList_ItemDeleted ( object sender, DevAgeComponent.ItemDeletedEventArgs e )
 		{
 			Rows.RowDeleted(e.Item);
 		}

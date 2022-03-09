@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-
+using DevAgeForms = DevAge.Windows.Forms;
 namespace SourceGrid.Cells.Models
 {
 
@@ -23,7 +23,7 @@ namespace SourceGrid.Cells.Models
         /// <summary>
         /// Sets the effect of the selected text.
         /// </summary>
-        public void SetSelectionEffect(CellContext cellContext, DevAge.Windows.Forms.EffectType effect)
+        public void SetSelectionEffect(CellContext cellContext, DevAgeForms.EffectType effect)
         {
             ValueChangeEventArgs valArgs = new ValueChangeEventArgs(null, effect);
 
@@ -138,7 +138,7 @@ namespace SourceGrid.Cells.Models
         /// </summary>
         /// <param name="cellContext"></param>
         /// <returns></returns>
-        private DevAge.Windows.Forms.DevAgeRichTextBox GetRichTextBoxControl(CellContext cellContext)
+        private DevAgeForms.DevAgeRichTextBox GetRichTextBoxControl(CellContext cellContext)
         {
             if (cellContext.Cell != null)
             {
@@ -149,7 +149,7 @@ namespace SourceGrid.Cells.Models
                 // as an editor can be used for more than one cell
                 if (editorRichTextBox.EditCell == null)
                 {
-                    editorRichTextBox.Control.Value = cellContext.Value as DevAge.Windows.Forms.RichText;
+                    editorRichTextBox.Control.Value = cellContext.Value as DevAgeForms.RichText;
                 }
 
                 return editorRichTextBox.Control;

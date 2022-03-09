@@ -1,5 +1,5 @@
 using System;
-
+using DevAgeCollections = DevAge.Collections;
 namespace SourceGrid.Cells.Models
 {
 	/// <summary>
@@ -18,7 +18,7 @@ namespace SourceGrid.Cells.Models
 		/// <summary>
 		/// A collection of elements of type IModel
 		/// </summary>
-		public class ModelList : DevAge.Collections.ListByType<IModel>
+		public class ModelList : DevAgeCollections.ListByType<IModel>
 		{
 		}
 

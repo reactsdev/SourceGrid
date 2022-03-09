@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 using Microsoft.Isam.Esent.Collections.Generic;
-using SourceGrid.PingGrid.Backend.Essent;
+
 
 namespace WindowsFormsSample.GridSamples.PingGrids
 {

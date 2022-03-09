@@ -11,4 +11,125 @@
     <FallbackCulture>en-US</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="GridSamples\AdvancedFeatures\frmSample42.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\AdvancedFeatures\frmSample44.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\AdvancedFeatures\frmSample45.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\AdvancedFeatures\frmSample46.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\AdvancedFeatures\frmSample47.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\AdvancedFeatures\frmSample50.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\AdvancedFeatures\frmSample51.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\AdvancedFeatures\frmSample52.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\AdvancedFeatures\frmSample55.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\BasicConcepts\frmSample14.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\BasicConcepts\frmSample28.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\BasicConcepts\frmSample48.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\BasicConcepts\frmSample54.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\Extensions\frmSample18.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\Extensions\frmSample27.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\Extensions\frmSample29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\Extensions\frmSample41.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\Extensions\frmSample43.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\Extensions\frmSample49.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\Extensions\frmSample9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\GenericSamples\frmSample01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\GenericSamples\frmSample04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\GenericSamples\frmSample25.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\Performance\frmSample53.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\PingGrids\frmSample58.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\PingGrids\frmSample59.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\PingGrids\frmSample60.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\StandardFeatures\frmSample03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\StandardFeatures\frmSample17.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\StandardFeatures\frmSample19.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\StandardFeatures\frmSample21.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\StandardFeatures\frmSample24.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\StandardFeatures\frmSample26.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\StandardFeatures\frmSample56.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\StandardFeatures\frmSample57.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GridSamples\StandardFeatures\frmSample61.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Threading\ProgressBarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

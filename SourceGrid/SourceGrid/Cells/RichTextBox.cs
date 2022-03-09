@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-
+using DevAgeForms = DevAge.Windows.Forms;
 namespace SourceGrid.Cells.Virtual
 {
     /// <summary>
@@ -46,7 +46,7 @@ namespace SourceGrid.Cells
         /// <summary>
         /// Value constrcutor
         /// </summary>
-        public RichTextBox(DevAge.Windows.Forms.RichText value)
+        public RichTextBox(DevAgeForms.RichText value)
             : base(value)
         {
             View = new Views.RichTextBox();
@@ -159,7 +159,7 @@ namespace SourceGrid.Cells
             //    SelectionFont = new Font(SelectionFont.FontFamily, SelectionFont.Size - OFFSET,
             //        SelectionFont.Style);
             //}
-            RichTextBoxModel.SetSelectionEffect(GetContext(), DevAge.Windows.Forms.EffectType.Superscript);
+            RichTextBoxModel.SetSelectionEffect(GetContext(), DevAgeForms.EffectType.Superscript);
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace SourceGrid.Cells
         /// </summary>
         public void SelectionNormalScript()
         {
-            RichTextBoxModel.SetSelectionEffect(GetContext(), DevAge.Windows.Forms.EffectType.Normal);
+            RichTextBoxModel.SetSelectionEffect(GetContext(), DevAgeForms.EffectType.Normal);
         }
 
         /// <summary>
@@ -188,7 +188,7 @@ namespace SourceGrid.Cells
             //    SelectionFont = new Font(SelectionFont.FontFamily, SelectionFont.Size + OFFSET,
             //        SelectionFont.Style);
             //}
-            RichTextBoxModel.SetSelectionEffect(GetContext(), DevAge.Windows.Forms.EffectType.Subscript);
+            RichTextBoxModel.SetSelectionEffect(GetContext(), DevAgeForms.EffectType.Subscript);
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace SourceGrid.Cells
         /// </summary>
         public void SelectionNormal()
         {
-            RichTextBoxModel.SetSelectionEffect(GetContext(), DevAge.Windows.Forms.EffectType.Normal);
+            RichTextBoxModel.SetSelectionEffect(GetContext(), DevAgeForms.EffectType.Normal);
         }
 
         #endregion

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using DevAge.ComponentModel;
 using SourceGrid.Cells;
 using SourceGrid.Selection;
+using DevAgeComponent = DevAge.ComponentModel;
 
 namespace SourceGrid.Extensions.PingGrids
 {
@@ -119,7 +120,7 @@ namespace SourceGrid.Extensions.PingGrids
 		}
 		
 		[Obsolete]
-		void mBoundList_ItemDeleted ( object sender, DevAge.ComponentModel.ItemDeletedEventArgs e )
+		void mBoundList_ItemDeleted ( object sender, DevAgeComponent.ItemDeletedEventArgs e )
 		{
 			Rows.RowDeleted(e.Item);
 		}

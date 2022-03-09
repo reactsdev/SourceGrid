@@ -1,18 +1,14 @@
 using System;
-using System.ComponentModel;
 using System.Data;
-
-using SourceGrid.Examples.Threading;
 using SourceGrid.Extensions.PingGrids;
 using SourceGrid.PingGrid.Backends.DSet;
-using WindowsFormsSample.GridSamples.PingGrids;
 
 namespace WindowsFormsSample
 {
-	/// <summary>
-	/// Summary description for frmSample3.
-	/// </summary>
-	[Sample("SourceGrid - PingGrid", 58, "PingGrid - DataSet backend")]
+    /// <summary>
+    /// Summary description for frmSample3.
+    /// </summary>
+    [Sample("SourceGrid - PingGrid", 58, "PingGrid - DataSet backend")]
 	public class frmSample58 : System.Windows.Forms.Form
 	{
 		private PingGrid grid;

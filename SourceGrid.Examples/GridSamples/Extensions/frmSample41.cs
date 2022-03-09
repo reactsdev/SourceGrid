@@ -1,6 +1,5 @@
-using SourceGrid;
+using DevAge.ComponentModel;
 using System;
-using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -8,10 +7,10 @@ using System.Windows.Forms;
 
 namespace WindowsFormsSample
 {
-	/// <summary>
-	/// Summary description for frmSample9.
-	/// </summary>
-	[Sample("SourceGrid - Extensions", 41, "Advanced Data Binding - different Views, images and tooltip")]
+    /// <summary>
+    /// Summary description for frmSample9.
+    /// </summary>
+    [Sample("SourceGrid - Extensions", 41, "Advanced Data Binding - different Views, images and tooltip")]
 	public class frmSample41 : System.Windows.Forms.Form
 	{
 		private SourceGrid.DataGrid dataGrid;
@@ -160,7 +159,7 @@ namespace WindowsFormsSample
 			dataGrid.FixedColumns = 1;
 			dataGrid.Selection.EnableMultiSelection = true;
 
-            DevAge.ComponentModel.IBoundList bd = new DevAge.ComponentModel.BoundDataView(mView);
+            IBoundList bd = new DevAge.ComponentModel.BoundDataView(mView);
 
 			//Create default columns
             CreateColumns(bd);
@@ -183,7 +182,7 @@ namespace WindowsFormsSample
             }
         }
 
-        private void CreateColumns(DevAge.ComponentModel.IBoundList boundList)
+        private void CreateColumns(IBoundList boundList)
 		{
             //Create the editors
 			SourceGrid.Cells.Editors.TextBoxNumeric numericEditor = new SourceGrid.Cells.Editors.TextBoxNumeric(typeof(decimal));

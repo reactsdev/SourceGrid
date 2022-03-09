@@ -14,8 +14,8 @@ namespace WindowsFormsSample.GridSamples
 	{
 		private System.Windows.Forms.Panel panelBottom;
 		private SourceGrid.Grid grid;
-		private System.Windows.Forms.MainMenu mainMenu1;
-		private System.Windows.Forms.MenuItem mnWindow;
+		private ContextMenuStrip mainMenu1;
+		private ToolStripMenuItem mnWindow;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -53,8 +53,8 @@ namespace WindowsFormsSample.GridSamples
 		{
 			this.panelBottom = new System.Windows.Forms.Panel();
 			this.grid = new SourceGrid.Grid();
-			this.mainMenu1 = new System.Windows.Forms.MainMenu();
-			this.mnWindow = new System.Windows.Forms.MenuItem();
+			this.mainMenu1 = new ContextMenuStrip();
+			this.mnWindow = new ToolStripMenuItem();
 			this.panelBottom.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -87,12 +87,12 @@ namespace WindowsFormsSample.GridSamples
 			// 
 			// mainMenu1
 			// 
-			this.mainMenu1.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+			this.mainMenu1.Items.AddRange(new ToolStripMenuItem[] {
 																					  this.mnWindow});
 			// 
 			// mnWindow
 			// 
-			this.mnWindow.Index = 0;
+			//this.mnWindow.Index = 0;
 			this.mnWindow.Text = "Window";
 			// 
 			// frmSample25
@@ -101,7 +101,7 @@ namespace WindowsFormsSample.GridSamples
 			this.ClientSize = new System.Drawing.Size(772, 470);
 			this.Controls.Add(this.panelBottom);
 			this.IsMdiContainer = true;
-			this.Menu = this.mainMenu1;
+			this.ContextMenuStrip = this.mainMenu1;
 			this.Name = "frmSample25";
 			this.Text = "frmSample25";
 			this.Load += new System.EventHandler(this.frmSample25_Load);
@@ -157,8 +157,8 @@ namespace WindowsFormsSample.GridSamples
 
 					if (assemblyTypes[i] != this.GetType())
 					{
-						MenuItem menu = new MenuForm(this, assemblyTypes[i], sampleAttribute.Description + " " + sampleAttribute.SampleNumber.ToString());
-						mnWindow.MenuItems.Add(menu);
+						ToolStripMenuItem menu = new MenuForm(this, assemblyTypes[i], sampleAttribute.Description + " " + sampleAttribute.SampleNumber.ToString());
+						mnWindow.DropDownItems.Add(menu);
 					}
 				}
 			}
@@ -171,7 +171,7 @@ namespace WindowsFormsSample.GridSamples
         }
 
 
-        private class MenuForm : MenuItem
+        private class MenuForm : ToolStripMenuItem
 		{
 			private Type mFrm;
 			private Form mParent;

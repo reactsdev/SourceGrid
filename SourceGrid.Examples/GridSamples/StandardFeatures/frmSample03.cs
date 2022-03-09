@@ -474,7 +474,7 @@ namespace WindowsFormsSample
             string rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0" +
                     "Microsoft Sans Serif;}}\r\n\\viewkind4\\uc1\\pard\\f0\\fs17 Only a \\b " +
                     "Test\\b0.\\par\r\n}\r\n";
-			var richTextBox = new SourceGrid.Cells.RichTextBox(new RichText(rtf));
+			var richTextBox = new SourceGrid.Cells.RichTextBox( new RichText(rtf));
 			grid[currentRow, 1] = richTextBox;
 
 			currentRow++;
@@ -491,7 +491,7 @@ namespace WindowsFormsSample
 			grid[currentRow, 0] = new SourceGrid.Cells.Cell("Cell Button");
 			grid[currentRow, 0].View = captionModel;
 			grid[currentRow, 1] = new SourceGrid.Cells.Button("CellButton");
-			grid[currentRow, 1].Image = Properties.Resources.FACE02.ToBitmap();
+			grid[currentRow, 1].Image =   Properties.Resources.FACE02.ToBitmap();
 			SourceGrid.Cells.Controllers.Button buttonClickEvent = new SourceGrid.Cells.Controllers.Button();
 			buttonClickEvent.Executed += new EventHandler(CellButton_Click);
 			grid[currentRow, 1].Controller.AddController(buttonClickEvent);
@@ -697,10 +697,10 @@ namespace WindowsFormsSample
 			// Cell VisualModelMultiImages
 			grid[currentRow, 1] = new SourceGrid.Cells.Cell("Multi Images");
 			SourceGrid.Cells.Views.MultiImages modelMultiImages = new SourceGrid.Cells.Views.MultiImages();
-			modelMultiImages.SubImages.Add(new DevAge.Drawing.VisualElements.Image(Properties.Resources.FACE00.ToBitmap()));
-			modelMultiImages.SubImages.Add(new DevAge.Drawing.VisualElements.Image(Properties.Resources.FACE01.ToBitmap()));
-			modelMultiImages.SubImages.Add(new DevAge.Drawing.VisualElements.Image(Properties.Resources.FACE02.ToBitmap()));
-			modelMultiImages.SubImages.Add(new DevAge.Drawing.VisualElements.Image(Properties.Resources.FACE04.ToBitmap()));
+			modelMultiImages.SubImages.Add(new DevAge.Drawing.VisualElements.Image(WindowsFormsSample.Properties.Resources.FACE00.ToBitmap()));
+			modelMultiImages.SubImages.Add(new DevAge.Drawing.VisualElements.Image(WindowsFormsSample.Properties.Resources.FACE01.ToBitmap()));
+			modelMultiImages.SubImages.Add(new DevAge.Drawing.VisualElements.Image(WindowsFormsSample.Properties.Resources.FACE02.ToBitmap()));
+			modelMultiImages.SubImages.Add(new DevAge.Drawing.VisualElements.Image(WindowsFormsSample.Properties.Resources.FACE04.ToBitmap()));
 			modelMultiImages.SubImages[0].AnchorArea = new DevAge.Drawing.AnchorArea(DevAge.Drawing.ContentAlignment.TopLeft, false);
 			modelMultiImages.SubImages[1].AnchorArea = new DevAge.Drawing.AnchorArea(DevAge.Drawing.ContentAlignment.TopRight, false);
 			modelMultiImages.SubImages[2].AnchorArea = new DevAge.Drawing.AnchorArea(DevAge.Drawing.ContentAlignment.BottomLeft, false);

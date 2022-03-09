@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using DevAgeDrawing = DevAge.Drawing;
 
 namespace SourceGrid.Selection
 {
@@ -702,11 +703,11 @@ namespace SourceGrid.Selection
 			set { mBackColor = value; Invalidate(); }
 		}
 
-		private DevAge.Drawing.RectangleBorder mBorder = new DevAge.Drawing.RectangleBorder(new DevAge.Drawing.BorderLine(Color.Black, 2));
+		private DevAgeDrawing.RectangleBorder mBorder = new DevAgeDrawing.RectangleBorder(new DevAgeDrawing.BorderLine(Color.Black, 2));
 		/// <summary>
 		/// The Border used to highlight the range
 		/// </summary>
-		public DevAge.Drawing.RectangleBorder Border
+		public DevAgeDrawing.RectangleBorder Border
 		{
 			get { return mBorder; }
 			set { mBorder = value; Invalidate(); }

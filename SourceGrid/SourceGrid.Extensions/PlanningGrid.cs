@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-
+using DevAgeDrawing = DevAge.Drawing;
 namespace SourceGrid.Planning
 {
 	/// <summary>
@@ -452,7 +452,7 @@ namespace SourceGrid.Planning
             m_DateTimeStart = dateTimeStart;
 
 			m_View = new Cells.Views.Cell();
-            m_View.Border = DevAge.Drawing.RectangleBorder.RectangleBlack1Width;
+            m_View.Border = DevAgeDrawing.RectangleBorder.RectangleBlack1Width;
 		}
 
 		public AppointmentBase():this("", DateTime.Now, DateTime.Now)

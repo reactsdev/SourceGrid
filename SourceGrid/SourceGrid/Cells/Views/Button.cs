@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-
+using DevAgeDrawing = DevAge.Drawing;
 namespace SourceGrid.Cells.Views
 {
 	/// <summary>
@@ -27,7 +27,7 @@ namespace SourceGrid.Cells.Views
 		/// </summary>
 		public Button()
 		{
-            Background = new DevAge.Drawing.VisualElements.ButtonThemed();
+            Background = new DevAgeDrawing.VisualElements.ButtonThemed();
 		}
 
 		/// <summary>
@@ -36,7 +36,7 @@ namespace SourceGrid.Cells.Views
 		/// <param name="p_Source"></param>
 		public Button(Button p_Source):base(p_Source)
 		{
-            Background = (DevAge.Drawing.VisualElements.IButton)p_Source.Background.Clone();
+            Background = (DevAgeDrawing.VisualElements.IButton)p_Source.Background.Clone();
 		}
 		#endregion
 
@@ -53,9 +53,9 @@ namespace SourceGrid.Cells.Views
 
         #region Visual Elements
 
-        public new DevAge.Drawing.VisualElements.IButton Background
+        public new DevAgeDrawing.VisualElements.IButton Background
         {
-            get { return (DevAge.Drawing.VisualElements.IButton)base.Background; }
+            get { return (DevAgeDrawing.VisualElements.IButton)base.Background; }
             set { base.Background = value; }
         }
 
@@ -64,13 +64,13 @@ namespace SourceGrid.Cells.Views
             base.PrepareView(context);
 
             if (context.CellRange.Contains(context.Grid.MouseDownPosition))
-                Background.Style = DevAge.Drawing.ButtonStyle.Pressed;
+                Background.Style = DevAgeDrawing.ButtonStyle.Pressed;
             else if (context.CellRange.Contains(context.Grid.MouseCellPosition))
-                Background.Style = DevAge.Drawing.ButtonStyle.Hot;
+                Background.Style = DevAgeDrawing.ButtonStyle.Hot;
             else if (context.CellRange.Contains(context.Grid.Selection.ActivePosition))
-                Background.Style = DevAge.Drawing.ButtonStyle.Focus;
+                Background.Style = DevAgeDrawing.ButtonStyle.Focus;
             else
-                Background.Style = DevAge.Drawing.ButtonStyle.Normal;
+                Background.Style = DevAgeDrawing.ButtonStyle.Normal;
         }
         #endregion
 	}

@@ -1,18 +1,12 @@
 ﻿
 using System;
 using System.Windows.Forms;
-using FluentNHibernate.Cfg;
-using Microsoft.Isam.Esent.Collections.Generic;
-using NHibernate;
-using NHibernate.Cfg;
-using NHibernate.Tool.hbm2ddl;
 using SourceGrid.Examples.Threading;
-using SourceGrid.PingGrid.Backend.Essent;
 using SourceGrid.PingGrid.Backend.NHibernate;
 
 namespace WindowsFormsSample.GridSamples.PingGrids
 {
-	[Sample("SourceGrid - PingGrid", 60, "PingGrid - NHibernate backend with FireBird")]
+    [Sample("SourceGrid - PingGrid", 60, "PingGrid - NHibernate backend with FireBird")]
 	public partial class frmSample60 : Form
 	{
 		string[] customerNames = {"FireBird", "MySQL", "PostGre", "DivanDB", "CouchDB"};

@@ -1,4 +1,5 @@
 using System;
+using DevAgeCollections = DevAge.Collections;
 
 namespace SourceGrid.Cells.Controllers
 {
@@ -8,7 +9,7 @@ namespace SourceGrid.Cells.Controllers
 		/// <summary>
 		/// A collection of elements of type IController. Only one instance of the same controller is allowed.
 		/// </summary>
-		public class ControllerList : DevAge.Collections.ListByType<IController>
+		public class ControllerList : DevAgeCollections.ListByType<IController>
 		{
 		}
 

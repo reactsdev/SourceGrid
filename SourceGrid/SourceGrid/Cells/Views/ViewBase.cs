@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Collections;
 using System.Windows.Forms;
-using DevAge.Drawing;
+using DevAgeDrawing = DevAge.Drawing;
 
 namespace SourceGrid.Cells.Views
 {
@@ -10,18 +10,18 @@ namespace SourceGrid.Cells.Views
 	/// Base abstract class to manage the visual aspect of a cell. This class can be shared beetween multiple cells.
 	/// </summary>
 	[Serializable]
-    public abstract class ViewBase : DevAge.Drawing.VisualElements.ContainerBase, IView
+    public abstract class ViewBase : DevAgeDrawing.VisualElements.ContainerBase, IView
 	{
         /// <summary>
         /// A default RectangleBorder instance with a 1 pixed LightGray border on bottom and right side
         /// </summary>
-        public static RectangleBorder DefaultBorder = new RectangleBorder(new BorderLine(Color.LightGray, 1),
-                                                                    new BorderLine(Color.LightGray, 1));
+        public static DevAgeDrawing.RectangleBorder DefaultBorder = new DevAgeDrawing.RectangleBorder(new DevAgeDrawing.BorderLine(Color.LightGray, 1),
+                                                                    new DevAgeDrawing.BorderLine(Color.LightGray, 1));
 
-        public static DevAge.Drawing.Padding DefaultPadding = new DevAge.Drawing.Padding(2);
+        public static DevAgeDrawing.Padding DefaultPadding = new DevAgeDrawing.Padding(2);
         public static Color DefaultBackColor = Color.FromKnownColor(KnownColor.Window);
         public static Color DefaultForeColor = Color.FromKnownColor(KnownColor.WindowText);
-        public static DevAge.Drawing.ContentAlignment DefaultAlignment = DevAge.Drawing.ContentAlignment.MiddleLeft;
+        public static DevAgeDrawing.ContentAlignment DefaultAlignment = DevAgeDrawing.ContentAlignment.MiddleLeft;
 
 
 		#region Constructors
@@ -31,7 +31,7 @@ namespace SourceGrid.Cells.Views
 		/// </summary>
 		public ViewBase()
         {
-            Background = new DevAge.Drawing.VisualElements.BackgroundSolid();
+            Background = new DevAgeDrawing.VisualElements.BackgroundSolid();
 
 
             Padding = DefaultPadding;
@@ -81,11 +81,11 @@ namespace SourceGrid.Cells.Views
 			set{m_ImageStretch = value;}
 		}
 
-		private DevAge.Drawing.ContentAlignment m_ImageAlignment;
+		private DevAgeDrawing.ContentAlignment m_ImageAlignment;
 		/// <summary>
 		/// Image Alignment
 		/// </summary>
-		public DevAge.Drawing.ContentAlignment ImageAlignment
+		public DevAgeDrawing.ContentAlignment ImageAlignment
 		{
 			get{return m_ImageAlignment;}
 			set{m_ImageAlignment = value;}
@@ -131,11 +131,11 @@ namespace SourceGrid.Cells.Views
             set { mTrimmingMode = value; }
         }
 
-        private DevAge.Drawing.ContentAlignment mTextAlignment;
+        private DevAgeDrawing.ContentAlignment mTextAlignment;
 		/// <summary>
 		/// Text Alignment.
 		/// </summary>
-		public DevAge.Drawing.ContentAlignment TextAlignment
+		public DevAgeDrawing.ContentAlignment TextAlignment
 		{
 			get{return mTextAlignment;}
 			set{mTextAlignment = value;}
@@ -161,22 +161,22 @@ namespace SourceGrid.Cells.Views
         {
             get
             {
-                if (Background is DevAge.Drawing.VisualElements.BackgroundSolid)
-                    return ((DevAge.Drawing.VisualElements.BackgroundSolid)Background).BackColor;
+                if (Background is DevAgeDrawing.VisualElements.BackgroundSolid)
+                    return ((DevAgeDrawing.VisualElements.BackgroundSolid)Background).BackColor;
                 else
                     return DefaultBackColor;
             }
             set 
             {
-                if (Background is DevAge.Drawing.VisualElements.BackgroundSolid)
-                    ((DevAge.Drawing.VisualElements.BackgroundSolid)Background).BackColor = value;
+                if (Background is DevAgeDrawing.VisualElements.BackgroundSolid)
+                    ((DevAgeDrawing.VisualElements.BackgroundSolid)Background).BackColor = value;
             }
         }
 
         /// <summary>
         /// The border of the Cell. Usually it is an instance of the DevAge.Drawing.RectangleBorder structure.
         /// </summary>
-        public new IBorder Border
+        public new DevAgeDrawing.IBorder Border
         {
             get { return base.Border; }
             set { base.Border = value; }
@@ -185,7 +185,7 @@ namespace SourceGrid.Cells.Views
         /// <summary>
         /// The padding of the cell. Usually it is 2 pixel on all sides.
         /// </summary>
-        public new DevAge.Drawing.Padding Padding
+        public new DevAgeDrawing.Padding Padding
         {
             get { return base.Padding; }
             set { base.Padding = value; }
@@ -194,7 +194,7 @@ namespace SourceGrid.Cells.Views
         /// <summary>
         /// Gets or sets a property that specify how to draw the elements.
         /// </summary>
-        public new ElementsDrawMode ElementsDrawMode
+        public new DevAgeDrawing.ElementsDrawMode ElementsDrawMode
         {
             get { return base.ElementsDrawMode; }
             set { base.ElementsDrawMode = value; }
@@ -209,7 +209,7 @@ namespace SourceGrid.Cells.Views
         /// <param name="graphics">Paint arguments</param>
 		/// <param name="rectangle">Rectangle where draw the current cell</param>
         public void DrawCell(CellContext cellContext,
-            DevAge.Drawing.GraphicsCache graphics,
+			DevAgeDrawing.GraphicsCache graphics,
             RectangleF rectangle)
         {
             PrepareView(cellContext);
@@ -236,7 +236,7 @@ namespace SourceGrid.Cells.Views
 		public Size Measure(CellContext cellContext,
 			Size maxLayoutArea)
 		{
-            using (DevAge.Drawing.MeasureHelper measure = new DevAge.Drawing.MeasureHelper(cellContext.Grid))
+            using (DevAgeDrawing.MeasureHelper measure = new DevAgeDrawing.MeasureHelper(cellContext.Grid))
             {
                 PrepareView(cellContext);
 
@@ -249,7 +249,7 @@ namespace SourceGrid.Cells.Views
         /// <summary>
         /// Background of the cell. Usually it is an instance of BackgroundSolid
         /// </summary>
-        public new DevAge.Drawing.VisualElements.IVisualElement Background
+        public new DevAgeDrawing.VisualElements.IVisualElement Background
         {
             get { return base.Background; }
             set { base.Background = value; }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using SourceGrid;
 using SourceGrid.Selection;
 
 namespace SourceGrid
@@ -17,7 +18,7 @@ namespace SourceGrid
 		public RangeRegion(Position position)
 		{
 			if (position.IsEmpty() == false)
-				m_RangeCollection.Add(new Range(position));
+				m_RangeCollection.Add(new SourceGrid.Range(position));
 		}
 		public RangeRegion(Range range)
 		{

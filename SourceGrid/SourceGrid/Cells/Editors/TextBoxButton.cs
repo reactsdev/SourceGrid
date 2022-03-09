@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Drawing;
 
 using System.Windows.Forms;
+using DevAgeForms = DevAge.Windows.Forms;
+using DevAgeDrawing = DevAge.Drawing;
 
 
 namespace SourceGrid.Cells.Editors
@@ -31,8 +33,8 @@ namespace SourceGrid.Cells.Editors
 		/// <returns></returns>
 		protected override Control CreateControl()
 		{
-			DevAge.Windows.Forms.DevAgeTextBoxButton editor = new DevAge.Windows.Forms.DevAgeTextBoxButton();
-			editor.BorderStyle = DevAge.Drawing.BorderStyle.None;
+			DevAgeForms.DevAgeTextBoxButton editor = new DevAgeForms.DevAgeTextBoxButton();
+			editor.BorderStyle = DevAgeDrawing.BorderStyle.None;
 			editor.Validator = this;
 			return editor;
 		}
@@ -40,11 +42,11 @@ namespace SourceGrid.Cells.Editors
 		/// <summary>
 		/// Gets the control used for editing the cell.
 		/// </summary>
-		public new DevAge.Windows.Forms.DevAgeTextBoxButton Control
+		public new DevAgeForms.DevAgeTextBoxButton Control
 		{
 			get
 			{
-				return (DevAge.Windows.Forms.DevAgeTextBoxButton)base.Control;
+				return (DevAgeForms.DevAgeTextBoxButton)base.Control;
 			}
 		}
 		#endregion
@@ -58,7 +60,7 @@ namespace SourceGrid.Cells.Editors
 		{
 			base.OnStartingEdit(cellContext, editorControl);
 
-			DevAge.Windows.Forms.DevAgeTextBoxButton editor = (DevAge.Windows.Forms.DevAgeTextBoxButton)editorControl;
+			DevAgeForms.DevAgeTextBoxButton editor = (DevAgeForms.DevAgeTextBoxButton)editorControl;
 			//to set the scroll of the textbox to the initial position (otherwise the textbox use the previous scroll position)
 			editor.TextBox.SelectionStart = 0;
 			editor.TextBox.SelectionLength = 0;

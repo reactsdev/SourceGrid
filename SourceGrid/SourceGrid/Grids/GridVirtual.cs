@@ -7,7 +7,8 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using SourceGrid.Cells;
-
+using DevAgeDrawing = DevAge.Drawing;
+using DevAgeForms = DevAge.Windows.Forms;
 namespace SourceGrid
 {
 	/// <summary>
@@ -1538,7 +1539,7 @@ namespace SourceGrid
 			base.OnPaint(e);
 
 			//NOTE: For now I draw all the visible cells (not only the invalidated cells).
-			using (DevAge.Drawing.GraphicsCache grCache = new DevAge.Drawing.GraphicsCache(e.Graphics, e.ClipRectangle))
+			using (DevAgeDrawing.GraphicsCache grCache = new DevAgeDrawing.GraphicsCache(e.Graphics, e.ClipRectangle))
 			{
 				foreach (Range rng in GetVisibleRegion())
 				{
@@ -1616,7 +1617,7 @@ namespace SourceGrid
 		/// <summary>
 		/// Draw the specified Cell
 		/// </summary>
-		protected virtual void PaintCell(DevAge.Drawing.GraphicsCache graphics,
+		protected virtual void PaintCell(DevAgeDrawing.GraphicsCache graphics,
 		                                 CellContext cellContext,
 		                                 RectangleF drawRectangle)
 		{
@@ -2292,7 +2293,7 @@ namespace SourceGrid
 
 			if (e.Handled == false)
 			{
-				DevAge.Windows.Forms.ErrorDialog.Show(this, e.Exception, "Error");
+				DevAgeForms.ErrorDialog.Show(this, e.Exception, "Error");
 				e.Handled = true;
 			}
 		}
